@@ -95,6 +95,25 @@
   .tile .ic{font-size:24px; margin-bottom:8px; display:block}
   .tile h3{font-size:16px; margin:0 0 4px}
   .tile p{font-size:14px; margin:0; color:var(--ink-soft)}
+  .tile img, .tile .tile-img{
+    width:100%; border-radius:8px; margin-bottom:12px; display:block;
+  }
+  .tile .tile-img{min-height:110px; font-size:11px; padding:12px}
+
+  /* Veja por dentro */
+  .ph.peek{min-height:280px; margin:26px 0}
+  .counts{
+    display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-top:6px;
+  }
+  .counts div{
+    background:#fff; border:1px solid var(--line); border-radius:12px;
+    padding:16px 20px; text-align:center; flex:1; min-width:96px;
+  }
+  .counts b{
+    display:block; font-size:26px; font-weight:900; color:var(--blue);
+    line-height:1; letter-spacing:-.02em;
+  }
+  .counts span{display:block; font-size:12px; color:var(--ink-soft); margin-top:5px; font-weight:600}
 
   /* ===== Passos ===== */
   .step{display:flex; gap:16px; padding:20px 0; border-bottom:1px solid var(--line)}
@@ -271,10 +290,39 @@
     <img class="shot" src="img-03.webp" alt="Quadro de rotina, cartões de blocos e checklist impressos" style="margin:26px 0" loading="lazy" />
 
     <div class="grid">
-      <div class="tile"><span class="ic">📘</span><h3>Guia dos 7 dias</h3><p>Passo a passo, do Dia 1 até a autonomia.</p></div>
-      <div class="tile"><span class="ic">🗓️</span><h3>Quadro de rotina</h3><p>Imprime e cola na parede do quarto.</p></div>
-      <div class="tile"><span class="ic">🎴</span><h3>Cartões de blocos</h3><p>Blocos de 15 a 25 min que ele monta.</p></div>
-      <div class="tile"><span class="ic">✅</span><h3>Checklist diário</h3><p>Ele marca sozinho. Você sai de cena.</p></div>
+      <div class="tile">
+        <div class="ph tile-img">[IMG-10 · Guia dos 7 Dias · livro espiral em pé, capa azul]</div>
+        <h3>Guia dos 7 dias</h3><p>Passo a passo, do Dia 1 até a autonomia.</p>
+      </div>
+      <div class="tile">
+        <div class="ph tile-img">[IMG-11 · Quadro de Rotina · folha impressa colada na parede do quarto]</div>
+        <h3>Quadro de rotina</h3><p>Imprime e cola na parede do quarto.</p>
+      </div>
+      <div class="tile">
+        <div class="ph tile-img">[IMG-12 · Cartões de Blocos · cartões recortados espalhados na mesa]</div>
+        <h3>Cartões de blocos</h3><p>Blocos de 15 a 25 min que ele monta.</p>
+      </div>
+      <div class="tile">
+        <div class="ph tile-img">[IMG-13 · Checklist Diário · folha preenchida com marcações]</div>
+        <h3>Checklist diário</h3><p>Ele marca sozinho. Você sai de cena.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 3B · VEJA POR DENTRO ========== -->
+<section class="section tint">
+  <div class="wrap">
+    <p class="kicker">Veja por dentro</p>
+    <h2 class="center">Não é um PDF de 5 páginas</h2>
+    <p class="center muted">São 35 páginas de material, mais 3 folhas prontas pra imprimir.</p>
+
+    <div class="ph peek">[IMG-14 · Grid de prévia · 6 páginas reais do material espalhadas em leque, mostrando volume e qualidade]</div>
+
+    <div class="counts">
+      <div><b>14</b><span>páginas de guia</span></div>
+      <div><b>3</b><span>folhas imprimíveis</span></div>
+      <div><b>18</b><span>páginas de bônus</span></div>
     </div>
   </div>
 </section>
