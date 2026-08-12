@@ -48,7 +48,7 @@
     justify-content:center; gap:8px;
   }
 
-  /* ===== CTA — poucos e fortes ===== */
+  /* ===== CTA · poucos e fortes ===== */
   .cta{
     display:block; background:var(--orange); color:#fff; text-decoration:none;
     padding:20px 24px; border-radius:10px; font-weight:800;
@@ -166,6 +166,51 @@
   details[open] summary::after{content:"−"}
   details p{margin:12px 0 0; font-size:15px; color:var(--ink-soft)}
 
+  /* ===== Pop-up de upsell ===== */
+  .ov{
+    position:fixed; inset:0; background:rgba(17,24,39,.72); z-index:999;
+    display:none; align-items:center; justify-content:center; padding:20px;
+    -webkit-backdrop-filter:blur(3px); backdrop-filter:blur(3px);
+  }
+  .ov.on{display:flex}
+  .modal{
+    background:#fff; border-radius:18px; max-width:440px; width:100%;
+    max-height:92vh; overflow-y:auto; position:relative; text-align:center;
+    padding:30px 24px 26px; animation:pop .22s ease-out;
+  }
+  @keyframes pop{from{transform:scale(.94);opacity:0}to{transform:scale(1);opacity:1}}
+  .modal .x{
+    position:absolute; top:12px; right:14px; background:none; border:0;
+    font-size:26px; line-height:1; color:#9CA3AF; cursor:pointer; padding:4px 8px;
+  }
+  .modal .eyebrow{
+    color:var(--orange); font-weight:800; font-size:12px; letter-spacing:.12em;
+    text-transform:uppercase; margin-bottom:10px;
+  }
+  .modal h3{font-size:24px; margin:0 0 10px; line-height:1.2}
+  .modal .lead{font-size:15px; color:var(--ink-2); margin:0 0 18px}
+  .modal img{width:100%; max-width:230px; margin:0 auto 18px; display:block; border-radius:10px}
+  .gain{
+    background:var(--blue-soft); border-radius:12px; padding:16px 18px;
+    text-align:left; margin-bottom:18px;
+  }
+  .gain li{
+    list-style:none; display:flex; gap:9px; padding:6px 0;
+    font-size:14px; color:var(--ink-2); font-weight:600;
+  }
+  .gain li b{color:var(--ok); flex:0 0 auto}
+  .gain ul{margin:0; padding:0}
+  .mathline{
+    font-size:15px; font-weight:700; color:var(--ink); margin:0 0 16px;
+  }
+  .mathline s{color:var(--ink-soft); font-weight:500}
+  .mathline .hi{color:var(--orange); font-size:22px; font-weight:900}
+  .modal .no{
+    display:block; background:none; border:0; color:var(--ink-soft);
+    font-size:13px; text-decoration:underline; margin:14px auto 0;
+    cursor:pointer; font-family:inherit;
+  }
+
   .foot{background:var(--blue-deep); color:#8A94A3; text-align:center; padding:34px 22px; font-size:13px; line-height:1.6}
   .foot b{color:#fff; display:block; margin-bottom:8px; font-size:15px}
 
@@ -186,7 +231,7 @@
 
     <img class="shot" src="img-01.webp" alt="Kit completo: guia, quadro de rotina, cartões de blocos, tablet e celular" style="margin:26px 0" />
 
-    <p>O sistema criado para pais de crianças de <strong>8 a 14 anos</strong> que já tentaram agenda, castigo e recompensa — e cansaram de repetir a mesma coisa cinco vezes por dia.</p>
+    <p>O sistema criado para pais de crianças de <strong>8 a 14 anos</strong> que já tentaram agenda, castigo e recompensa, e cansaram de repetir a mesma coisa cinco vezes por dia.</p>
 
     <a href="#planos" class="cta">QUERO O SISTEMA AGORA</a>
     <p class="cta-sub">Acesso imediato no seu e-mail</p>
@@ -208,7 +253,7 @@
     <img class="shot" src="img-02.webp" alt="Mãe cansada ao lado do filho distraído no celular na hora da lição" style="margin:26px 0" loading="lazy" />
 
     <p>Ele enrola. Reclama. Some pro celular assim que você vira as costas. Você fica em cima, quase faz a lição junto. No fim do dia, os dois exaustos.</p>
-    <p>Você já comprou a agenda — durou uma semana. Prometeu prêmio — virou negociação. Ameaçou tirar o videogame — piorou o clima, e a nota continua igual.</p>
+    <p>Você já comprou a agenda: durou uma semana. Prometeu prêmio: virou negociação. Ameaçou tirar o videogame: piorou o clima, e a nota continua igual.</p>
 
     <div class="quote">
       <p>O problema nunca foi disciplina. É que toda rotina que ele tentou foi <strong>montada por você</strong>. E rotina imposta não gruda.</p>
@@ -263,7 +308,7 @@
 
     <img class="shot" src="img-04.webp" alt="Criança estudando sozinha e concentrada, mãe relaxada ao fundo" style="margin:26px 0" loading="lazy" />
 
-    <p class="muted">Não é milagre. É a criança sentindo que a rotina é dela — e não mais uma ordem sua.</p>
+    <p class="muted">Não é milagre. É a criança sentindo que a rotina é dela, não mais uma ordem sua.</p>
   </div>
 </section>
 
@@ -352,7 +397,7 @@
         </ul>
         <p class="old">Antes R$57,90</p>
         <p class="now">R$17,90</p>
-        <a href="#" class="cta ghost">Comprar só o sistema</a>
+        <a href="#" class="cta ghost" id="btn-basico">Comprar só o sistema</a>
       </div>
 
       <div class="plan top">
@@ -395,7 +440,7 @@
     <h2 class="center">Perguntas frequentes</h2>
 
     <div style="margin-top:22px">
-      <details><summary>Meu filho tem muita resistência. Funciona?</summary><p>Funciona melhor com quem resiste mais. O sistema não depende de imposição — depende dele participar da construção.</p></details>
+      <details><summary>Meu filho tem muita resistência. Funciona?</summary><p>Funciona melhor com quem resiste mais. O sistema não depende de imposição, depende dele participar da construção.</p></details>
       <details><summary>Serve pra qualquer idade?</summary><p>Feito pra 8 a 14 anos. Se adapta ao nível de autonomia de cada fase.</p></details>
       <details><summary>Preciso ficar em cima todo dia?</summary><p>Só nos primeiros dias, junto na construção. Depois disso, o objetivo é você sair de cena.</p></details>
       <details><summary>Ele se distrai com qualquer coisa.</summary><p>O sistema usa blocos curtos justamente por isso. E o Bônus 3 traz uma adaptação específica pra esse caso.</p></details>
@@ -417,11 +462,69 @@
   Resultados variam de família para família. Conteúdo educacional, sem garantia de resultado específico.
 </div>
 
+<!-- ========== POP-UP DE UPSELL (dispara no clique do Básico) ========== -->
+<div class="ov" id="upsell" role="dialog" aria-modal="true" aria-labelledby="up-t">
+  <div class="modal">
+    <button class="x" id="up-x" aria-label="Fechar">&times;</button>
+
+    <div class="eyebrow">Espera! Só mais 10 reais</div>
+    <h3 id="up-t">Por <span style="color:var(--orange)">R$10</span> a mais você leva os 3 bônus</h3>
+    <p class="lead">A maioria dos pais que compra só o sistema volta depois pra pegar os bônus. Sai mais caro.</p>
+
+    <img src="img-01.webp" alt="Kit completo com os 3 bônus" loading="lazy" />
+
+    <div class="gain">
+      <ul>
+        <li><b>+</b> Comunicação Sem Guerra <span style="color:var(--ink-soft);font-weight:500">(R$27,90)</span></li>
+        <li><b>+</b> Telas Sem Conflito <span style="color:var(--ink-soft);font-weight:500">(R$27,90)</span></li>
+        <li><b>+</b> Para Quem se Distrai Fácil <span style="color:var(--ink-soft);font-weight:500">(R$19,90)</span></li>
+      </ul>
+    </div>
+
+    <p class="mathline">
+      <s>R$75,70 em bônus</s> por apenas <span class="hi">+R$10</span>
+    </p>
+
+    <a href="#" class="cta" id="up-yes">SIM, QUERO OS 3 BÔNUS</a>
+    <button class="no" id="up-no">Não, quero só o sistema por R$17,90</button>
+  </div>
+</div>
+
 <script>
   (function(){
     var d=new Date();
     var el=document.getElementById('hoje');
     if(el) el.textContent=d.toLocaleDateString('pt-BR');
+
+    // ----- Pop-up de upsell -----
+    var ov=document.getElementById('upsell');
+    var btn=document.getElementById('btn-basico');
+    var LINK_BASICO='#';   // trocar pelo checkout do Plano Básico (Hotmart)
+    var skip=false;
+
+    function open(e){
+      if(skip) return;              // deixa passar depois do "não, obrigado"
+      e.preventDefault();
+      ov.classList.add('on');
+      document.body.style.overflow='hidden';
+    }
+    function close(){
+      ov.classList.remove('on');
+      document.body.style.overflow='';
+    }
+
+    if(btn) btn.addEventListener('click', open);
+    document.getElementById('up-x').addEventListener('click', close);
+
+    document.getElementById('up-no').addEventListener('click', function(){
+      skip=true; close();
+      if(LINK_BASICO!=='#') window.location.href=LINK_BASICO;
+    });
+
+    ov.addEventListener('click', function(e){ if(e.target===ov) close(); });
+    document.addEventListener('keydown', function(e){
+      if(e.key==='Escape' && ov.classList.contains('on')) close();
+    });
   })();
 </script>
 
