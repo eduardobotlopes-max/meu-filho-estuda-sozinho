@@ -185,49 +185,93 @@
   details[open] summary::after{content:"−"}
   details p{margin:12px 0 0; font-size:15px; color:var(--ink-soft)}
 
-  /* ===== Pop-up de upsell ===== */
+  /* ===== Pop-up de voucher ===== */
   .ov{
-    position:fixed; inset:0; background:rgba(17,24,39,.72); z-index:999;
-    display:none; align-items:center; justify-content:center; padding:20px;
-    -webkit-backdrop-filter:blur(3px); backdrop-filter:blur(3px);
+    position:fixed; inset:0; background:rgba(17,24,39,.78); z-index:999;
+    display:none; align-items:center; justify-content:center; padding:18px;
+    -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
   }
   .ov.on{display:flex}
   .modal{
-    background:#fff; border-radius:18px; max-width:440px; width:100%;
-    max-height:92vh; overflow-y:auto; position:relative; text-align:center;
-    padding:30px 24px 26px; animation:pop .22s ease-out;
+    background:#fff; border-radius:20px; max-width:420px; width:100%;
+    max-height:94vh; overflow-y:auto; position:relative; text-align:center;
+    padding:28px 22px 24px; animation:pop .25s cubic-bezier(.2,.9,.3,1.3);
   }
-  @keyframes pop{from{transform:scale(.94);opacity:0}to{transform:scale(1);opacity:1}}
+  @keyframes pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
   .modal .x{
-    position:absolute; top:12px; right:14px; background:none; border:0;
-    font-size:26px; line-height:1; color:#9CA3AF; cursor:pointer; padding:4px 8px;
+    position:absolute; top:10px; right:12px; background:none; border:0;
+    font-size:26px; line-height:1; color:#B6BCC6; cursor:pointer; padding:4px 8px; z-index:3;
   }
-  .modal .eyebrow{
-    color:var(--orange); font-weight:800; font-size:12px; letter-spacing:.12em;
-    text-transform:uppercase; margin-bottom:10px;
+  .stage{display:none}
+  .stage.on{display:block}
+
+  .tagline{
+    display:inline-block; background:#DCFCE7; color:#166534; font-weight:800;
+    font-size:10.5px; letter-spacing:.1em; text-transform:uppercase;
+    padding:6px 12px; border-radius:6px; margin-bottom:14px;
   }
-  .modal h3{font-size:24px; margin:0 0 10px; line-height:1.2}
-  .modal .lead{font-size:15px; color:var(--ink-2); margin:0 0 18px}
-  .modal img{width:100%; max-width:230px; margin:0 auto 18px; display:block; border-radius:10px}
-  .gain{
-    background:var(--blue-soft); border-radius:12px; padding:16px 18px;
-    text-align:left; margin-bottom:18px;
+  .modal h3{font-size:22px; line-height:1.25; margin:0 0 12px}
+  .modal .lead{font-size:14.5px; color:var(--ink-soft); margin:0 0 20px; line-height:1.55}
+
+  .noteCard{
+    border:2px solid #86EFAC; background:#F0FDF4; border-radius:14px;
+    padding:20px 18px; text-align:left; margin-bottom:22px;
   }
-  .gain li{
-    list-style:none; display:flex; gap:9px; padding:6px 0;
-    font-size:14px; color:var(--ink-2); font-weight:600;
+  .noteCard h3{font-size:19px; margin:0 0 10px; color:var(--ink)}
+  .noteCard p{margin:0; font-size:14px; color:var(--ink-soft); line-height:1.55}
+
+  /* voucher */
+  .vouch{
+    background:#fff; border:2px dashed #9CA3AF; border-radius:14px;
+    padding:22px 18px 16px; margin:0 auto 20px; max-width:290px; position:relative;
   }
-  .gain li b{color:var(--ok); flex:0 0 auto}
-  .gain ul{margin:0; padding:0}
-  .mathline{
-    font-size:15px; font-weight:700; color:var(--ink); margin:0 0 16px;
+  .vouch.won{border-style:solid; border-color:#22C55E; background:#F0FDF4}
+  .vouch .mark{
+    width:52px; height:52px; margin:0 auto 12px; border-radius:50%;
+    background:var(--blue); color:#fff; display:flex; align-items:center;
+    justify-content:center; font-size:26px;
   }
-  .mathline s{color:var(--ink-soft); font-weight:500}
-  .mathline .hi{color:var(--orange); font-size:22px; font-weight:900}
+  .vouch.won .mark{background:#16A34A}
+  .vouch .lbl{font-weight:800; font-size:16px; color:var(--ink); line-height:1.3}
+  .vouch .off{
+    font-size:38px; font-weight:900; color:#16A34A; line-height:1;
+    letter-spacing:-.03em; margin:2px 0 4px;
+  }
+  .vouch .offsub{font-size:12px; color:var(--ink-soft); font-weight:700; margin-bottom:10px}
+  .vouch .fine{font-size:11px; color:var(--ink-soft); line-height:1.5; margin:8px 0 0}
+  .barcode{
+    height:42px; margin:14px auto 6px; max-width:210px;
+    background:repeating-linear-gradient(90deg,
+      #111827 0 2px, transparent 2px 4px, #111827 4px 5px, transparent 5px 9px,
+      #111827 9px 12px, transparent 12px 13px, #111827 13px 14px, transparent 14px 18px);
+  }
+  .barnum{font-size:11px; letter-spacing:.18em; color:var(--ink-soft); font-weight:600}
+
+  .pricebox{
+    display:flex; align-items:center; justify-content:center; gap:12px;
+    margin:0 0 18px; font-weight:800;
+  }
+  .pricebox s{color:var(--ink-soft); font-weight:600; font-size:17px}
+  .pricebox b{color:#16A34A; font-size:30px; letter-spacing:-.02em}
+
+  .modal .cta{max-width:100%}
+  .cta.green{background:#16A34A; box-shadow:0 6px 20px rgba(22,163,74,.34)}
+  .cta.green:hover{box-shadow:0 10px 26px rgba(22,163,74,.42)}
   .modal .no{
     display:block; background:none; border:0; color:var(--ink-soft);
-    font-size:13px; text-decoration:underline; margin:14px auto 0;
+    font-size:12.5px; text-decoration:underline; margin:14px auto 0;
     cursor:pointer; font-family:inherit;
+  }
+  .scarce{font-size:12.5px; color:var(--ink-soft); margin:14px 0 0}
+  .scarce b{color:var(--orange)}
+
+  /* confete */
+  #confetti{position:fixed; inset:0; pointer-events:none; z-index:1000; overflow:hidden; display:none}
+  #confetti.on{display:block}
+  .cf{position:absolute; width:9px; height:14px; opacity:0; animation:fall linear forwards}
+  @keyframes fall{
+    0%{opacity:1; transform:translateY(-8vh) rotate(0deg)}
+    100%{opacity:0; transform:translateY(105vh) rotate(720deg)}
   }
 
   .foot{background:var(--blue-deep); color:#8A94A3; text-align:center; padding:34px 22px; font-size:13px; line-height:1.6}
@@ -299,11 +343,11 @@
         <h3>Quadro de rotina</h3><p>Imprime e cola na parede do quarto.</p>
       </div>
       <div class="tile">
-        <div class="ph tile-img">[IMG-12 · Cartões de Blocos · cartões recortados espalhados na mesa]</div>
+        <img src="img-12.webp" alt="Cartões de blocos recortados" loading="lazy" />
         <h3>Cartões de blocos</h3><p>Blocos de 15 a 25 min que ele monta.</p>
       </div>
       <div class="tile">
-        <div class="ph tile-img">[IMG-13 · Checklist Diário · folha preenchida com marcações]</div>
+        <img src="img-13.webp" alt="Checklist diário preenchido" loading="lazy" />
         <h3>Checklist diário</h3><p>Ele marca sozinho. Você sai de cena.</p>
       </div>
     </div>
@@ -317,7 +361,7 @@
     <h2 class="center">Não é um PDF de 5 páginas</h2>
     <p class="center muted">São 35 páginas de material, mais 3 folhas prontas pra imprimir.</p>
 
-    <div class="ph peek">[IMG-14 · Grid de prévia · 6 páginas reais do material espalhadas em leque, mostrando volume e qualidade]</div>
+    <img class="shot" src="img-14.webp" alt="Prévia das páginas do material" style="margin:26px 0" loading="lazy" />
 
     <div class="counts">
       <div><b>14</b><span>páginas de guia</span></div>
@@ -444,7 +488,7 @@
           <li class="off"><span class="n">✕</span> Para Quem se Distrai Fácil</li>
         </ul>
         <p class="old">Antes R$57,90</p>
-        <p class="now">R$17,90</p>
+        <p class="now">R$27,90</p>
         <a href="#" class="cta ghost" id="btn-basico">Comprar só o sistema</a>
       </div>
 
@@ -463,8 +507,8 @@
           <li><span class="y">✓</span> Para Quem se Distrai Fácil</li>
         </ul>
         <p class="old">Valor real R$133,60</p>
-        <p class="now">R$27,90</p>
-        <a href="#" class="cta">QUERO TUDO POR R$27,90</a>
+        <p class="now">R$47,90</p>
+        <a href="#" class="cta">QUERO TUDO POR R$47,90</a>
       </div>
     </div>
 
@@ -510,64 +554,135 @@
   Resultados variam de família para família. Conteúdo educacional, sem garantia de resultado específico.
 </div>
 
-<!-- ========== POP-UP DE UPSELL (dispara no clique do Básico) ========== -->
-<div class="ov" id="upsell" role="dialog" aria-modal="true" aria-labelledby="up-t">
+<!-- ========== POP-UP DE VOUCHER (3 estágios) ========== -->
+<div id="confetti"></div>
+
+<div class="ov" id="voucher" role="dialog" aria-modal="true">
   <div class="modal">
-    <button class="x" id="up-x" aria-label="Fechar">&times;</button>
+    <button class="x" id="v-x" aria-label="Fechar">&times;</button>
 
-    <div class="eyebrow">Espera! Só mais 10 reais</div>
-    <h3 id="up-t">Por <span style="color:var(--orange)">R$10</span> a mais você leva os 3 bônus</h3>
-    <p class="lead">A maioria dos pais que compra só o sistema volta depois pra pegar os bônus. Sai mais caro.</p>
-
-    <img src="img-01.webp" alt="Kit completo com os 3 bônus" loading="lazy" />
-
-    <div class="gain">
-      <ul>
-        <li><b>+</b> Comunicação Sem Guerra <span style="color:var(--ink-soft);font-weight:500">(R$27,90)</span></li>
-        <li><b>+</b> Telas Sem Conflito <span style="color:var(--ink-soft);font-weight:500">(R$27,90)</span></li>
-        <li><b>+</b> Para Quem se Distrai Fácil <span style="color:var(--ink-soft);font-weight:500">(R$19,90)</span></li>
-      </ul>
+    <!-- Estágio 1 · aviso -->
+    <div class="stage on" id="st1">
+      <div class="noteCard">
+        <span class="tagline">Oportunidade primeiro acesso</span>
+        <h3>Você recebeu um voucher premiado da nossa equipe por chegar até aqui 🍀</h3>
+        <p>Clique no botão abaixo para garantir a sua oportunidade promocional de primeiro acesso.</p>
+      </div>
+      <a href="#" class="cta green" id="v-go">Continuar para Finalização →</a>
+      <button class="no" id="v-no1">Não quero meu desconto</button>
     </div>
 
-    <p class="mathline">
-      <s>R$75,70 em bônus</s> por apenas <span class="hi">+R$10</span>
-    </p>
+    <!-- Estágio 2 · resgatar -->
+    <div class="stage" id="st2">
+      <h3>Resgate Seu Voucher 🎁</h3>
+      <p class="lead">Clique em Resgatar Agora para revelar o seu desconto de primeiro acesso.</p>
 
-    <a href="#" class="cta" id="up-yes">SIM, QUERO OS 3 BÔNUS</a>
-    <button class="no" id="up-no">Não, quero só o sistema por R$17,90</button>
+      <div class="vouch">
+        <div class="mark">🎟️</div>
+        <div class="lbl">Resgate seu<br>voucher</div>
+        <div class="barcode"></div>
+        <div class="barnum">2 3 7 8 4 9 5 6 0 1 2 3</div>
+      </div>
+
+      <a href="#" class="cta green" id="v-redeem">Resgatar Agora</a>
+      <p class="scarce">Restam apenas <b>39 vouchers</b> nesta rodada.</p>
+    </div>
+
+    <!-- Estágio 3 · resgatado -->
+    <div class="stage" id="st3">
+      <h3>Voucher Resgatado! 🎉</h3>
+      <p class="lead">Clique abaixo para finalizar seu acesso e garantir o desconto.</p>
+
+      <div class="vouch won">
+        <div class="mark">✓</div>
+        <div class="off">29% OFF</div>
+        <div class="offsub">de desconto</div>
+        <p class="fine">Pelo seu primeiro acesso você ganhou um bônus de 29% OFF, válido somente uma vez.</p>
+        <div class="barcode"></div>
+        <div class="barnum">2 3 7 8 4 9 5 6 0 1 2 3</div>
+      </div>
+
+      <div class="pricebox"><s>R$27,90</s> <b>R$19,90</b></div>
+
+      <a href="#" class="cta green" id="v-finish">Finalizar Acesso</a>
+      <button class="no" id="v-no3">Não quero o desconto</button>
+    </div>
   </div>
 </div>
 
 <script>
   (function(){
-    var d=new Date();
-    var el=document.getElementById('hoje');
+    var d=new Date(), el=document.getElementById('hoje');
     if(el) el.textContent=d.toLocaleDateString('pt-BR');
 
-    // ----- Pop-up de upsell -----
-    var ov=document.getElementById('upsell');
-    var btn=document.getElementById('btn-basico');
-    var LINK_BASICO='#';   // trocar pelo checkout do Plano Básico (Hotmart)
-    var skip=false;
+    // ---- links de checkout (trocar pelos da Hotmart) ----
+    var LINK_BASICO   = '#';   // Básico R$27,90 (sem voucher)
+    var LINK_VOUCHER  = '#';   // Básico com voucher R$19,90
+    var LINK_COMPLETO = '#';   // Completo R$47,90
 
+    var ov   = document.getElementById('voucher');
+    var btn  = document.getElementById('btn-basico');
+    var conf = document.getElementById('confetti');
+    var skip = false;
+
+    function show(id){
+      ['st1','st2','st3'].forEach(function(s){
+        document.getElementById(s).classList.toggle('on', s===id);
+      });
+    }
     function open(e){
-      if(skip) return;              // deixa passar depois do "não, obrigado"
+      if(skip) return;
       e.preventDefault();
+      show('st1');
       ov.classList.add('on');
       document.body.style.overflow='hidden';
     }
     function close(){
       ov.classList.remove('on');
+      conf.classList.remove('on');
       document.body.style.overflow='';
+    }
+    function go(url){
+      if(url && url!=='#') window.location.href=url;
+    }
+    function bail(url){
+      skip=true; close(); go(url);
+    }
+
+    function confetti(){
+      conf.innerHTML=''; conf.classList.add('on');
+      var cores=['#2563EB','#F97316','#FBBF24','#16A34A','#60A5FA','#FB923C'];
+      for(var i=0;i<90;i++){
+        var p=document.createElement('div');
+        p.className='cf';
+        p.style.left=(Math.random()*100)+'vw';
+        p.style.background=cores[(Math.random()*cores.length)|0];
+        p.style.animationDuration=(2.2+Math.random()*1.8)+'s';
+        p.style.animationDelay=(Math.random()*.45)+'s';
+        if(Math.random()>.6) p.style.borderRadius='50%';
+        conf.appendChild(p);
+      }
+      setTimeout(function(){ conf.classList.remove('on'); }, 4600);
     }
 
     if(btn) btn.addEventListener('click', open);
-    document.getElementById('up-x').addEventListener('click', close);
+    document.getElementById('v-x').addEventListener('click', close);
 
-    document.getElementById('up-no').addEventListener('click', function(){
-      skip=true; close();
-      if(LINK_BASICO!=='#') window.location.href=LINK_BASICO;
+    document.getElementById('v-go').addEventListener('click', function(e){
+      e.preventDefault(); show('st2');
     });
+
+    document.getElementById('v-redeem').addEventListener('click', function(e){
+      e.preventDefault(); show('st3'); confetti();
+    });
+
+    document.getElementById('v-finish').addEventListener('click', function(e){
+      if(LINK_VOUCHER==='#'){ e.preventDefault(); }
+      else { this.href=LINK_VOUCHER; }
+    });
+
+    document.getElementById('v-no1').addEventListener('click', function(){ bail(LINK_BASICO); });
+    document.getElementById('v-no3').addEventListener('click', function(){ bail(LINK_BASICO); });
 
     ov.addEventListener('click', function(e){ if(e.target===ov) close(); });
     document.addEventListener('keydown', function(e){
