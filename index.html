@@ -4,458 +4,424 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 <title>Meu Filho Estuda Sozinho · Sistema de 7 Dias</title>
-<meta name="description" content="O sistema que ensina seu filho de 8 a 14 anos a estudar sozinho em até 7 dias. Sem grito, sem ameaça, sem ficar do lado o tempo todo." />
+<meta name="description" content="O sistema que faz seu filho de 8 a 14 anos estudar sozinho em 7 dias. Sem grito, sem ameaça, sem você do lado o tempo todo." />
 <meta property="og:title" content="Meu Filho Estuda Sozinho · Sistema de 7 Dias" />
 <meta property="og:description" content="Rotina que seu filho ajuda a construir. Fim da briga do dever em 7 dias." />
 <meta property="og:image" content="/img-01.webp" />
-<meta name="theme-color" content="#12324B" />
+<meta name="theme-color" content="#2563EB" />
 <style>
   :root{
-    --navy:#12324B; --navy-2:#0A2033;
-    --amber:#D89330; --amber-soft:#F6E4C4;
-    --sand:#EDD8B1;
-    --cream:#FBF6EA; --cream-2:#F5EDDA;
-    --ink:#1E2530; --ink-soft:#4E5766;
-    --line:#E5DBC6; --ok:#2C7A4B;
-    --radius:14px; --shadow:0 12px 32px rgba(18,50,75,.10);
-    --wrap:760px;
+    --blue:#2563EB; --blue-dark:#1D4ED8; --blue-deep:#111827;
+    --blue-soft:#EFF4FF;
+    --orange:#F97316; --orange-dark:#EA6A0A;
+    --ink:#111827; --ink-2:#374151; --ink-soft:#6B7280;
+    --bg:#FFFFFF; --bg-2:#F8FAFC;
+    --line:#E5E7EB; --ok:#16A34A;
+    --wrap:640px;
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
   body{
-    font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-    color:var(--ink); background:var(--cream); line-height:1.55; -webkit-font-smoothing:antialiased;
+    font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    color:var(--ink); background:var(--bg); line-height:1.5;
+    -webkit-font-smoothing:antialiased;
   }
-  h1,h2,h3{font-family:"Georgia","Times New Roman",serif; line-height:1.12; color:var(--navy); margin:0 0 14px}
-  h1{font-size:clamp(30px,4.6vw,44px); letter-spacing:-.01em}
-  h2{font-size:clamp(24px,3.4vw,34px); letter-spacing:-.005em}
-  h3{font-size:clamp(19px,2.4vw,23px)}
-  p{margin:0 0 14px}
-  strong{color:var(--navy)}
+  h1,h2,h3{margin:0 0 16px; line-height:1.15; letter-spacing:-.02em; font-weight:800}
+  h1{font-size:clamp(30px,7vw,44px)}
+  h2{font-size:clamp(25px,5.5vw,34px)}
+  h3{font-size:clamp(18px,3.6vw,21px); font-weight:700}
+  p{margin:0 0 16px; color:var(--ink-2); font-size:clamp(16px,3.6vw,17px)}
+  strong{color:var(--ink); font-weight:700}
+  .blue{color:var(--blue)}
 
   .topbar{
-    background:var(--navy-2); color:#fff; text-align:center; padding:11px 14px;
-    font-weight:600; font-size:14px; letter-spacing:.02em;
+    background:var(--blue); color:#fff; text-align:center; padding:12px 16px;
+    font-weight:700; font-size:13px; letter-spacing:.06em; text-transform:uppercase;
   }
-  .topbar b{color:var(--amber)}
 
-  .wrap{max-width:var(--wrap); margin:0 auto; padding:44px 20px}
+  .wrap{max-width:var(--wrap); margin:0 auto; padding:56px 22px}
   .center{text-align:center}
   .muted{color:var(--ink-soft)}
   .kicker{
-    color:var(--amber); font-weight:800; letter-spacing:.14em; text-transform:uppercase;
-    font-size:12px; margin-bottom:12px;
-  }
-  .amber{color:var(--amber)}
-
-  .btn{
-    display:inline-block; background:var(--amber); color:#fff; text-decoration:none;
-    padding:19px 28px; border-radius:12px; font-weight:800; font-size:17px;
-    box-shadow:0 10px 24px rgba(216,147,48,.30); border:0; cursor:pointer;
-    width:100%; max-width:540px; text-align:center; transition:transform .1s ease;
-  }
-  .btn:hover{transform:translateY(-1px)}
-  .btn.secondary{background:var(--navy); box-shadow:0 10px 24px rgba(18,50,75,.24)}
-  .btn.big{padding:22px 28px; font-size:18px}
-  .btn-sub{color:var(--ink-soft); font-size:14px; margin-top:8px}
-
-  .pillrow{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:14px 0 8px}
-  .pill{
-    background:#fff; border:1px solid var(--line); border-radius:999px; padding:8px 14px;
-    font-size:13px; font-weight:600; color:var(--navy);
+    color:var(--orange); font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+    font-size:12px; margin-bottom:14px; display:flex; align-items:center;
+    justify-content:center; gap:8px;
   }
 
-  .card{
-    background:#fff; border:1px solid var(--line); border-radius:var(--radius);
-    padding:22px; box-shadow:var(--shadow); margin:14px 0;
+  /* ===== CTA — poucos e fortes ===== */
+  .cta{
+    display:block; background:var(--orange); color:#fff; text-decoration:none;
+    padding:20px 24px; border-radius:10px; font-weight:800;
+    font-size:clamp(15px,3.7vw,17px); text-align:center; letter-spacing:.01em;
+    box-shadow:0 6px 20px rgba(249,115,22,.35); margin:0 auto; max-width:460px;
+    transition:transform .12s ease, box-shadow .12s ease;
   }
+  .cta:hover{transform:translateY(-2px); box-shadow:0 10px 26px rgba(249,115,22,.42)}
+  .cta-sub{color:var(--ink-soft); font-size:14px; margin:12px 0 0; text-align:center}
 
+  .trust{
+    display:flex; flex-wrap:wrap; gap:10px 22px; justify-content:center;
+    margin:20px 0 0; color:var(--ink-soft); font-size:13px; font-weight:600;
+  }
+  .trust span{display:flex; align-items:center; gap:6px}
+
+  /* ===== Imagens ===== */
+  .shot{width:100%; border-radius:14px; display:block; margin:0 auto}
   .ph{
-    background:var(--cream-2); border:1px dashed var(--sand); border-radius:12px;
-    color:var(--ink-soft); font-size:13px; padding:22px; text-align:center; margin:22px auto;
-    min-height:220px; display:flex; align-items:center; justify-content:center;
+    background:var(--blue-soft); border:2px dashed #C7D9FF; border-radius:14px;
+    color:#5B7CC4; font-size:13px; font-weight:600; padding:24px; text-align:center;
+    display:flex; align-items:center; justify-content:center; line-height:1.5;
   }
-  .ph.small{min-height:150px}
-  .ph.tall{min-height:340px}
+  .ph.hero{min-height:300px}
+  .ph.mid{min-height:230px}
+  .ph.cover{min-height:190px}
 
-  .hero{background:linear-gradient(180deg,#fff 0%, var(--cream) 100%)}
-  .section-alt{background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+  .section{border-top:1px solid var(--line)}
+  .section.tint{background:var(--bg-2)}
+  .section.deep{background:var(--blue-deep); color:#fff}
+  .section.deep h2, .section.deep h3{color:#fff}
+  .section.deep p{color:#C7CFDB}
+  .section.deep .muted{color:#98A3B3}
 
   .quote{
-    background:var(--cream-2); border-left:4px solid var(--amber);
-    padding:16px 20px; border-radius:8px; font-style:italic; color:var(--navy); font-size:17px;
+    background:var(--blue-soft); border-left:4px solid var(--blue);
+    padding:20px 22px; border-radius:0 10px 10px 0; margin:26px 0;
   }
+  .quote p{margin:0; color:var(--ink); font-size:17px; font-weight:600}
 
-  /* Roadmap steps */
-  .steps{margin:24px 0}
-  .step{display:flex; gap:14px; align-items:flex-start; padding:14px 0; border-bottom:1px solid var(--line)}
+  /* ===== Cards de benefício ===== */
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:26px 0}
+  .tile{background:#fff; border:1px solid var(--line); border-radius:12px; padding:18px}
+  .tile .ic{font-size:24px; margin-bottom:8px; display:block}
+  .tile h3{font-size:16px; margin:0 0 4px}
+  .tile p{font-size:14px; margin:0; color:var(--ink-soft)}
+
+  /* ===== Passos ===== */
+  .step{display:flex; gap:16px; padding:20px 0; border-bottom:1px solid var(--line)}
   .step:last-child{border-bottom:0}
-  .step .num{
-    background:var(--navy); color:#fff; width:38px; height:38px; border-radius:50%;
-    display:flex; align-items:center; justify-content:center; font-weight:800; flex:0 0 38px;
+  .step .n{
+    background:var(--blue); color:#fff; width:34px; height:34px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; font-weight:800;
+    font-size:15px; flex:0 0 34px;
   }
-  .step .body h3{margin-bottom:6px}
-  .step .body p{margin:0; color:var(--ink-soft)}
+  .step h3{margin:2px 0 4px; font-size:17px}
+  .step p{margin:0; font-size:15px; color:var(--ink-soft)}
 
-  /* Benefit cards */
-  .bencards{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin:20px 0}
-  .bencard{background:#fff; border:1px solid var(--line); border-radius:12px; padding:18px}
-  .bencard .ic{
-    width:38px; height:38px; border-radius:8px; background:var(--amber-soft);
-    display:flex; align-items:center; justify-content:center; margin-bottom:10px; font-size:20px;
+  /* ===== Depoimentos ===== */
+  .rev{background:#fff; border:1px solid var(--line); border-radius:12px; padding:20px; margin:14px 0}
+  .rev .top{display:flex; align-items:center; gap:12px; margin-bottom:10px}
+  .rev .av{width:42px; height:42px; border-radius:50%; background:var(--blue); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px; flex:0 0 42px}
+  .rev .nm{font-weight:700; font-size:15px}
+  .rev .rl{color:var(--ink-soft); font-size:13px}
+  .rev .st{color:#FBBF24; font-size:14px; letter-spacing:2px; margin-bottom:8px}
+  .rev p{margin:0; font-size:15px; color:var(--ink-2)}
+
+  /* ===== Bônus ===== */
+  .bonus{background:#fff; border:1px solid var(--line); border-radius:14px; overflow:hidden; margin:16px 0}
+  .bonus .ph{border-radius:0; border:0; border-bottom:1px solid var(--line)}
+  .bonus .in{padding:20px}
+  .bonus .tag{background:var(--blue-soft); color:var(--blue-dark); display:inline-block; padding:5px 12px; border-radius:6px; font-weight:800; font-size:11px; letter-spacing:.08em; margin-bottom:10px}
+  .bonus h3{margin:0 0 6px}
+  .bonus p{font-size:15px; margin:0 0 12px; color:var(--ink-soft)}
+  .val{display:flex; gap:10px; align-items:baseline}
+  .val .old{text-decoration:line-through; color:var(--ink-soft); font-size:14px; font-weight:600}
+  .val .new{color:var(--ok); font-weight:800; font-size:15px}
+
+  /* ===== Planos ===== */
+  .plans{display:grid; grid-template-columns:1fr; gap:18px; margin-top:28px}
+  .plan{background:#fff; border:2px solid var(--line); border-radius:16px; padding:26px 22px; position:relative}
+  .plan.top{border-color:var(--orange); box-shadow:0 14px 40px rgba(249,115,22,.16)}
+  .plan .flag{
+    position:absolute; top:-13px; left:50%; transform:translateX(-50%);
+    background:var(--orange); color:#fff; padding:6px 18px; border-radius:20px;
+    font-weight:800; font-size:11px; letter-spacing:.06em; white-space:nowrap;
   }
-  .bencard h3{font-size:17px; margin-bottom:4px}
-  .bencard p{margin:0; color:var(--ink-soft); font-size:14px}
-
-  /* Testimonials */
-  .rev{background:#fff; border:1px solid var(--line); border-radius:12px; padding:16px; margin:12px 0}
-  .rev .head{display:flex; align-items:center; gap:12px; margin-bottom:6px}
-  .rev .av{width:38px; height:38px; border-radius:50%; background:var(--navy); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:14px}
-  .rev .name{font-weight:700; color:var(--navy)}
-  .rev .role{color:var(--ink-soft); font-size:13px}
-  .stars{color:var(--amber); font-size:15px; letter-spacing:2px}
-
-  /* Bônus */
-  .bono{border:1px solid var(--line); border-radius:12px; overflow:hidden; margin:16px 0; background:#fff; box-shadow:var(--shadow)}
-  .bono .body{padding:20px}
-  .bono .tag{background:var(--amber); color:#fff; display:inline-block; padding:4px 12px; border-radius:999px; font-weight:800; font-size:12px; letter-spacing:.08em; margin-bottom:8px}
-  .bono h3{margin:6px 0 8px}
-  .price-line{display:flex; gap:12px; align-items:center; margin-top:10px}
-  .strike{text-decoration:line-through; color:var(--ink-soft); font-weight:600}
-  .free{color:var(--ok); font-weight:800}
-
-  /* Plans */
-  .plans{display:grid; grid-template-columns:1fr; gap:16px; margin-top:20px}
-  @media(min-width:760px){.plans{grid-template-columns:1fr 1.05fr}}
-  .plan{background:#fff; border:1px solid var(--line); border-radius:14px; padding:22px; position:relative}
-  .plan.best{border-color:var(--amber); box-shadow:0 14px 36px rgba(216,147,48,.15)}
-  .plan .badge{
-    position:absolute; top:-14px; left:50%; transform:translateX(-50%);
-    background:var(--amber); color:#fff; padding:6px 16px; border-radius:999px;
-    font-weight:800; font-size:12px; letter-spacing:.06em; white-space:nowrap;
-  }
-  .plan h3{margin:0 0 6px; font-family:system-ui,sans-serif; font-weight:800; color:var(--navy)}
-  .plan .sub{color:var(--ink-soft); font-size:14px; margin-bottom:14px}
-  .plan ul{list-style:none; padding:0; margin:14px 0}
-  .plan li{padding:9px 0; border-bottom:1px dashed var(--line); font-size:15px; display:flex; gap:10px; align-items:flex-start}
+  .plan h3{font-size:22px; margin:0 0 4px}
+  .plan .tl{color:var(--ink-soft); font-size:14px; margin-bottom:18px}
+  .plan ul{list-style:none; padding:0; margin:0 0 20px}
+  .plan li{display:flex; gap:10px; padding:11px 0; border-bottom:1px solid #F1F3F6; font-size:15px; color:var(--ink-2)}
   .plan li:last-child{border-bottom:0}
-  .plan li .chk{color:var(--ok); font-weight:800; flex:0 0 auto}
-  .plan li .lock{color:#B7B0A0; font-weight:800; flex:0 0 auto}
-  .plan .price{margin-top:12px}
-  .plan .before{color:var(--ink-soft); text-decoration:line-through; font-size:14px; text-align:center}
-  .plan .now{font-size:30px; font-weight:900; color:var(--navy); text-align:center; margin:4px 0 14px}
-  .plan.best .now{color:var(--amber)}
+  .plan li.off{color:#B6BCC6}
+  .plan li .y{color:var(--ok); font-weight:800; flex:0 0 auto}
+  .plan li .n{color:#D3D7DE; font-weight:800; flex:0 0 auto}
+  .plan .old{text-align:center; color:var(--ink-soft); text-decoration:line-through; font-size:15px; margin:0}
+  .plan .now{text-align:center; font-size:38px; font-weight:900; color:var(--ink); margin:2px 0 20px; letter-spacing:-.03em}
+  .plan.top .now{color:var(--orange)}
+  .cta.ghost{background:#fff; color:var(--ink-2); border:2px solid var(--line); box-shadow:none; padding:18px}
+  .cta.ghost:hover{border-color:var(--ink-soft); transform:none; box-shadow:none}
 
-  /* Guarantee */
-  .seal-block{background:var(--amber-soft); border-radius:14px; padding:24px; margin:20px 0; display:flex; gap:20px; align-items:center; flex-wrap:wrap}
-  .seal-block .ph{margin:0; min-height:150px; flex:0 0 150px; background:#fff; border-color:var(--sand)}
-  .seal-block .txt{flex:1; min-width:220px}
-  .seal-block h3{margin:0 0 6px}
-  .seal-block p{margin:0; color:var(--ink-soft)}
+  /* ===== Garantia ===== */
+  .guar{text-align:center}
+  .guar img{width:170px; height:auto; margin:0 auto 8px; display:block}
+  .guar .days{
+    font-size:13px; font-weight:800; letter-spacing:.1em; color:var(--orange);
+    text-transform:uppercase; margin-bottom:10px;
+  }
 
-  /* FAQ */
-  details{background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin:8px 0}
-  details summary{cursor:pointer; font-weight:700; color:var(--navy); list-style:none}
+  /* ===== FAQ ===== */
+  details{border-bottom:1px solid var(--line); padding:18px 0}
+  details summary{cursor:pointer; font-weight:700; font-size:16px; list-style:none; display:flex; justify-content:space-between; gap:12px; align-items:center}
   details summary::-webkit-details-marker{display:none}
-  details[open] summary{color:var(--amber)}
-  details p{margin-top:10px; color:var(--ink-soft)}
+  details summary::after{content:"+"; color:var(--blue); font-size:22px; font-weight:700; flex:0 0 auto}
+  details[open] summary::after{content:"−"}
+  details p{margin:12px 0 0; font-size:15px; color:var(--ink-soft)}
 
-  .footer{background:var(--navy-2); color:#B7C1CC; text-align:center; padding:26px 20px; font-size:13px}
-  .footer b{color:#fff; display:block; margin-bottom:6px}
+  .foot{background:var(--blue-deep); color:#8A94A3; text-align:center; padding:34px 22px; font-size:13px; line-height:1.6}
+  .foot b{color:#fff; display:block; margin-bottom:8px; font-size:15px}
+
+  @media(min-width:680px){
+    .plans{grid-template-columns:1fr 1.08fr; align-items:start}
+  }
 </style>
 </head>
 <body>
 
-<div class="topbar">Oferta especial · termina em <b id="timer">25:00</b></div>
+<div class="topbar">Oferta disponível apenas hoje · <span id="hoje"></span></div>
 
-<!-- ============ 1 · HERO ============ -->
-<section class="hero">
-  <div class="wrap center">
-    <div class="kicker">Sistema Digital · 7 dias</div>
-    <h1>Seu filho estuda sozinho em <span class="amber">7 dias</span>. Sem grito, sem ameaça, sem você do lado o tempo todo.</h1>
-    <p class="muted">Para pais de crianças de 8 a 14 anos que já tentaram agenda, castigo e recompensa. E cansaram.</p>
-
-    <div class="pillrow">
-      <span class="pill">Acesso imediato</span>
-      <span class="pill">Compra 100% segura</span>
-      <span class="pill">Garantia de 7 dias</span>
-    </div>
-
-    <div class="ph tall">[IMG-01 · Hero · mockup do kit: guia principal em 3D + quadro de rotina imprimível + cartões de blocos + tablet, composição limpa, fundo creme]</div>
-
-    <a href="#planos" class="btn big">QUERO O SISTEMA PRO MEU FILHO →</a>
-    <p class="btn-sub">Envio imediato no seu e-mail</p>
-  </div>
-</section>
-
-<!-- ============ 2 · IDENTIFICAÇÃO ============ -->
-<section class="section-alt">
-  <div class="wrap">
-    <p class="kicker center">Se você se reconhece nisso</p>
-    <h2 class="center">A hora do dever virou <span class="amber">guerra</span>. E não é culpa do seu filho.</h2>
-
-    <div class="ph">[IMG-02 · Lifestyle · foto real de mãe/pai tenso ao lado de criança com caderno na mesa da cozinha, cena natural, luz suave]</div>
-
-    <p>Ele enrola. Reclama. Some pro celular. Você fica em cima, quase faz a lição junto. No fim, os dois exaustos.</p>
-    <p>Já comprou agenda: durou uma semana. Prometeu prêmio: virou negociação. Ameaçou tirar o jogo: piorou o clima, e a nota continua a mesma.</p>
-
-    <div class="quote">O problema não é falta de disciplina. É que toda rotina que ele tentou foi <strong>imposta por você</strong>. E rotina imposta nunca gruda.</div>
-
-    <div class="center" style="margin-top:24px">
-      <a href="#planos" class="btn">QUERO PARAR DE BRIGAR TODO DIA →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 3 · O QUE É ============ -->
-<section>
-  <div class="wrap">
-    <p class="kicker center">O que você recebe</p>
-    <h2 class="center">Um kit prático, pra usar no <span class="amber">mesmo dia</span></h2>
-    <p class="center muted">Sem app pra baixar. Sem assinatura. Sem curso em vídeo pra assistir.</p>
-
-    <div class="ph">[IMG-03 · Páginas internas · flat lay overhead com quadro de rotina impresso, cartões de blocos coloridos, checklist e lápis sobre mesa creme]</div>
-
-    <div class="bencards">
-      <div class="bencard"><div class="ic">📘</div><h3>Guia principal</h3><p>Passo a passo dos 7 dias, do Dia 1 à autonomia da semana 2.</p></div>
-      <div class="bencard"><div class="ic">🗓️</div><h3>Quadro de rotina</h3><p>Modelo visual pra imprimir e colar na parede do quarto.</p></div>
-      <div class="bencard"><div class="ic">🎴</div><h3>Cartões de blocos</h3><p>Blocos de 15 a 25 minutos que a criança ajuda a montar.</p></div>
-      <div class="bencard"><div class="ic">✅</div><h3>Checklist diário</h3><p>Ela marca sozinha o que já cumpriu. Você sai de cena.</p></div>
-    </div>
-
-    <div class="center">
-      <a href="#planos" class="btn">QUERO ESSE KIT →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 4 · MÉTODO ============ -->
-<section class="section-alt">
-  <div class="wrap">
-    <p class="kicker center">Como funciona</p>
-    <h2 class="center">Muda <span class="amber">quem constrói</span> a rotina. Aí tudo muda.</h2>
-
-    <div class="steps card">
-      <div class="step"><div class="num">1</div><div class="body"><h3>Dia 1 · Construção junto</h3><p>Você e seu filho montam o quadro juntos. Ele escolhe horários e blocos, com sua orientação.</p></div></div>
-      <div class="step"><div class="num">2</div><div class="body"><h3>Dias 2-3 · Primeiro teste</h3><p>Blocos curtos (15-25 min), no ritmo dele, sem vigilância.</p></div></div>
-      <div class="step"><div class="num">3</div><div class="body"><h3>Dias 4-5 · Ajuste</h3><p>Revisam juntos o que não funcionou. Sistema flexível, não engessado.</p></div></div>
-      <div class="step"><div class="num">4</div><div class="body"><h3>Dias 6-7 · Autonomia</h3><p>Ele segue o checklist sozinho. Você sai de cena.</p></div></div>
-      <div class="step"><div class="num">5</div><div class="body"><h3>Semana 2 · Virou hábito</h3><p>A rotina virou dele. Não é mais uma cobrança sua.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 5 · FAMÍLIA APLICANDO ============ -->
+<!-- ========== 1 · HERO ========== -->
 <section>
   <div class="wrap center">
-    <p class="kicker">Rotina que funciona em casa</p>
-    <h2>O clima muda. E é rápido.</h2>
+    <div class="kicker">🔒 Compra 100% segura</div>
+    <h1>Faça seu filho estudar <span class="blue">sozinho</span> em 7 dias. Sem grito e sem briga.</h1>
 
-    <div class="ph tall">[IMG-04 · Família · foto real de criança de 10-12 anos concentrada no caderno, mãe ao fundo tomando café tranquila, luz natural da janela, casa moderna]</div>
+    <div class="ph hero" style="margin:26px 0">[IMG-01 · HERO · mockup 3D do kit com CRIANÇAS ILUSTRADAS na capa]</div>
 
-    <p class="muted">Não é milagre. É a criança sentindo que a rotina é dela, não uma cobrança sua.</p>
+    <p>O sistema criado para pais de crianças de <strong>8 a 14 anos</strong> que já tentaram agenda, castigo e recompensa — e cansaram de repetir a mesma coisa cinco vezes por dia.</p>
 
-    <a href="#planos" class="btn">QUERO ISSO NA MINHA CASA →</a>
+    <a href="#planos" class="cta">QUERO O SISTEMA AGORA</a>
+    <p class="cta-sub">Acesso imediato no seu e-mail</p>
+
+    <div class="trust">
+      <span>✓ Acesso vitalício</span>
+      <span>✓ 7 dias de garantia</span>
+      <span>✓ Pronto pra imprimir</span>
+    </div>
   </div>
 </section>
 
-<!-- ============ 6 · PROVA SOCIAL ============ -->
-<section class="section-alt">
+<!-- ========== 2 · DOR ========== -->
+<section class="section tint">
   <div class="wrap">
-    <p class="kicker center">Famílias reais</p>
+    <p class="kicker">Se isso acontece na sua casa</p>
+    <h2 class="center">A hora do dever virou guerra. E a culpa não é do seu filho.</h2>
+
+    <div class="ph mid" style="margin:26px 0">[IMG-02 · Ilustração: mãe cansada e criança desanimada com caderno na mesa]</div>
+
+    <p>Ele enrola. Reclama. Some pro celular assim que você vira as costas. Você fica em cima, quase faz a lição junto. No fim do dia, os dois exaustos.</p>
+    <p>Você já comprou a agenda — durou uma semana. Prometeu prêmio — virou negociação. Ameaçou tirar o videogame — piorou o clima, e a nota continua igual.</p>
+
+    <div class="quote">
+      <p>O problema nunca foi disciplina. É que toda rotina que ele tentou foi <strong>montada por você</strong>. E rotina imposta não gruda.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 3 · O QUE RECEBE ========== -->
+<section class="section">
+  <div class="wrap">
+    <p class="kicker">O que você recebe</p>
+    <h2 class="center">Um kit pra imprimir e usar hoje mesmo</h2>
+    <p class="center muted">Sem app. Sem assinatura. Sem curso em vídeo pra assistir.</p>
+
+    <div class="ph mid" style="margin:26px 0">[IMG-03 · Flat lay do material impresso: quadro de rotina colorido, cartões, checklist]</div>
+
+    <div class="grid">
+      <div class="tile"><span class="ic">📘</span><h3>Guia dos 7 dias</h3><p>Passo a passo, do Dia 1 até a autonomia.</p></div>
+      <div class="tile"><span class="ic">🗓️</span><h3>Quadro de rotina</h3><p>Imprime e cola na parede do quarto.</p></div>
+      <div class="tile"><span class="ic">🎴</span><h3>Cartões de blocos</h3><p>Blocos de 15 a 25 min que ele monta.</p></div>
+      <div class="tile"><span class="ic">✅</span><h3>Checklist diário</h3><p>Ele marca sozinho. Você sai de cena.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 4 · MÉTODO ========== -->
+<section class="section tint">
+  <div class="wrap">
+    <p class="kicker">Como funciona</p>
+    <h2 class="center">Muda quem monta a rotina. Aí tudo muda.</h2>
+
+    <div style="margin-top:26px">
+      <div class="step"><div class="n">1</div><div><h3>Dia 1 · Vocês montam juntos</h3><p>Seu filho escolhe os horários e os blocos, com a sua orientação. Ele participa da construção.</p></div></div>
+      <div class="step"><div class="n">2</div><div><h3>Dias 2 e 3 · Primeiro teste</h3><p>Blocos curtos, no ritmo dele, sem você vigiando.</p></div></div>
+      <div class="step"><div class="n">3</div><div><h3>Dias 4 e 5 · Ajuste</h3><p>Revisam juntos o que não funcionou. O sistema se adapta.</p></div></div>
+      <div class="step"><div class="n">4</div><div><h3>Dias 6 e 7 · Autonomia</h3><p>Ele segue o checklist sozinho. Você sai de cena.</p></div></div>
+      <div class="step"><div class="n">5</div><div><h3>Semana 2 · Virou hábito</h3><p>A rotina passou a ser dele. Não é mais cobrança sua.</p></div></div>
+    </div>
+
+    <div style="margin-top:34px">
+      <a href="#planos" class="cta">QUERO ESSE SISTEMA</a>
+      <p class="cta-sub">Chega no seu e-mail em segundos</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 5 · RESULTADO ========== -->
+<section class="section">
+  <div class="wrap center">
+    <p class="kicker">O que muda em casa</p>
+    <h2>Ele senta e estuda. Você toma seu café.</h2>
+
+    <div class="ph mid" style="margin:26px 0">[IMG-04 · Ilustração: criança estudando concentrada, mãe relaxada ao fundo]</div>
+
+    <p class="muted">Não é milagre. É a criança sentindo que a rotina é dela — e não mais uma ordem sua.</p>
+  </div>
+</section>
+
+<!-- ========== 6 · PROVA SOCIAL ========== -->
+<section class="section tint">
+  <div class="wrap">
+    <p class="kicker">Famílias reais</p>
     <h2 class="center">O que outros pais dizem</h2>
 
     <div class="rev">
-      <div class="head"><div class="av">AP</div><div><div class="name">Ana P.</div><div class="role">mãe · menino de 10 anos</div></div></div>
-      <div class="stars">★★★★★</div>
+      <div class="top"><div class="av">AP</div><div><div class="nm">Ana P.</div><div class="rl">mãe de menino de 10 anos</div></div></div>
+      <div class="st">★★★★★</div>
       <p>"A gente brigava todo dia na hora do dever. No terceiro dia usando o sistema, ele pegou o caderno sem eu falar nada. Chorei."</p>
     </div>
 
     <div class="rev">
-      <div class="head"><div class="av">MT</div><div><div class="name">Marcos T.</div><div class="role">pai · menina de 12 anos</div></div></div>
-      <div class="stars">★★★★★</div>
+      <div class="top"><div class="av">MT</div><div><div class="nm">Marcos T.</div><div class="rl">pai de menina de 12 anos</div></div></div>
+      <div class="st">★★★★★</div>
       <p>"Já tinha comprado agenda, quadro, de tudo. A diferença foi ela ter ajudado a montar o dela. Isso mudou tudo."</p>
     </div>
 
     <div class="rev">
-      <div class="head"><div class="av">RS</div><div><div class="name">Renata S.</div><div class="role">mãe solo · 2 filhos</div></div></div>
-      <div class="stars">★★★★★</div>
-      <p>"Não é mágica. Mas em uma semana parei de repetir cinco vezes a mesma coisa. Pra mim, valeu."</p>
+      <div class="top"><div class="av">RS</div><div><div class="nm">Renata S.</div><div class="rl">mãe solo, 2 filhos</div></div></div>
+      <div class="st">★★★★★</div>
+      <p>"Não é mágica. Mas em uma semana parei de repetir cinco vezes a mesma coisa. Pra mim, já valeu."</p>
     </div>
   </div>
 </section>
 
-<!-- ============ 7 · BÔNUS ============ -->
-<section>
+<!-- ========== 7 · BÔNUS ========== -->
+<section class="section">
   <div class="wrap">
-    <p class="kicker center">E não termina aí</p>
-    <h2 class="center">Você também recebe <span class="amber">3 bônus</span></h2>
+    <p class="kicker">E ainda tem mais</p>
+    <h2 class="center">Você leva 3 bônus junto</h2>
 
-    <div class="bono">
-      <div class="ph small" style="margin:0; border-radius:0; border:0; border-bottom:1px solid var(--line)">[IMG-05 · Capa Bônus 1 · livro 3D em pé, capa navy com ícone estilizado de bolha de conversa, título "Comunicação sem Guerra" (SEM TEXTO na imagem, texto vai por cima em HTML), fundo creme]</div>
-      <div class="body">
+    <div class="bonus">
+      <div class="ph cover">[IMG-05 · Capa Bônus 1 · livro 3D, ilustração de mãe e filho conversando]</div>
+      <div class="in">
         <span class="tag">BÔNUS 1</span>
         <h3>Comunicação Sem Guerra</h3>
-        <p class="muted">As frases que funcionam e as que sabotam. Como elogiar em vez de cobrar, sem virar sermão.</p>
-        <div class="price-line"><span class="strike">R$27,90</span> <span class="free">GRÁTIS</span></div>
+        <p>As frases que funcionam e as que sabotam. Como elogiar em vez de cobrar, sem virar sermão.</p>
+        <div class="val"><span class="old">R$27,90</span> <span class="new">GRÁTIS</span></div>
       </div>
     </div>
 
-    <div class="bono">
-      <div class="ph small" style="margin:0; border-radius:0; border:0; border-bottom:1px solid var(--line)">[IMG-06 · Capa Bônus 2 · livro 3D em pé, capa âmbar com ícone estilizado de tela de celular com relógio, fundo creme]</div>
-      <div class="body">
+    <div class="bonus">
+      <div class="ph cover">[IMG-06 · Capa Bônus 2 · livro 3D, ilustração de criança largando o celular]</div>
+      <div class="in">
         <span class="tag">BÔNUS 2</span>
         <h3>Telas Sem Conflito</h3>
-        <p class="muted">Como reduzir o tempo de tela sem virar outra briga diária. Regras simples que ela aceita porque entende.</p>
-        <div class="price-line"><span class="strike">R$27,90</span> <span class="free">GRÁTIS</span></div>
+        <p>Como reduzir o tempo de tela sem virar outra briga. Regras que ele aceita porque entende.</p>
+        <div class="val"><span class="old">R$27,90</span> <span class="new">GRÁTIS</span></div>
       </div>
     </div>
 
-    <div class="bono">
-      <div class="ph small" style="margin:0; border-radius:0; border:0; border-bottom:1px solid var(--line)">[IMG-07 · Capa Bônus 3 · livro 3D em pé, capa gradiente navy-âmbar com ícone estilizado de foco/mira, fundo creme]</div>
-      <div class="body">
+    <div class="bonus">
+      <div class="ph cover">[IMG-07 · Capa Bônus 3 · livro 3D, ilustração de criança focada com fones]</div>
+      <div class="in">
         <span class="tag">BÔNUS 3</span>
-        <h3>Adaptação Para Quem se Distrai Fácil</h3>
-        <p class="muted">Versão do método pra criança que perde o foco a cada ruído. Blocos ainda mais curtos, ambiente ajustado.</p>
-        <div class="price-line"><span class="strike">R$19,90</span> <span class="free">GRÁTIS</span></div>
+        <h3>Para Quem se Distrai Fácil</h3>
+        <p>Versão do método pra criança que perde o foco a cada ruído. Blocos ainda mais curtos.</p>
+        <div class="val"><span class="old">R$19,90</span> <span class="new">GRÁTIS</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 8 · PLANOS ============ -->
-<section id="planos" class="section-alt">
+<!-- ========== 8 · PLANOS ========== -->
+<section id="planos" class="section tint">
   <div class="wrap">
-    <p class="kicker center">Escolha seu plano</p>
+    <p class="kicker">Escolha seu acesso</p>
     <h2 class="center">A oferta termina hoje</h2>
 
     <div class="plans">
-      <!-- BÁSICO -->
       <div class="plan">
-        <h3>Plano Básico</h3>
-        <p class="sub">Só o Sistema de 7 Dias. Sem os bônus.</p>
-
-        <div class="ph" style="min-height:160px">[IMG-08 · Plano Básico · mockup simples: guia principal + tablet lado a lado, composição minimalista, fundo creme, transmite "só o essencial"]</div>
-
+        <h3>Básico</h3>
+        <p class="tl">Só o sistema. Sem os bônus.</p>
         <ul>
-          <li><span class="chk">✓</span> Guia principal · Sistema de 7 Dias</li>
-          <li><span class="chk">✓</span> Quadro de rotina · imprimível</li>
-          <li><span class="chk">✓</span> Cartões de blocos · imprimível</li>
-          <li><span class="chk">✓</span> Checklist diário · imprimível</li>
-          <li><span class="lock">✕</span> Bônus 1 · Comunicação Sem Guerra</li>
-          <li><span class="lock">✕</span> Bônus 2 · Telas Sem Conflito</li>
-          <li><span class="lock">✕</span> Bônus 3 · Adaptação Para Quem se Distrai</li>
+          <li><span class="y">✓</span> Guia dos 7 dias</li>
+          <li><span class="y">✓</span> Quadro de rotina</li>
+          <li><span class="y">✓</span> Cartões de blocos</li>
+          <li><span class="y">✓</span> Checklist diário</li>
+          <li class="off"><span class="n">✕</span> Comunicação Sem Guerra</li>
+          <li class="off"><span class="n">✕</span> Telas Sem Conflito</li>
+          <li class="off"><span class="n">✕</span> Para Quem se Distrai Fácil</li>
         </ul>
-
-        <div class="price">
-          <p class="before">Antes R$57,90</p>
-          <p class="now">R$17,90</p>
-          <a href="#" class="btn secondary">COMPRAR SÓ O SISTEMA</a>
-        </div>
+        <p class="old">Antes R$57,90</p>
+        <p class="now">R$17,90</p>
+        <a href="#" class="cta ghost">Comprar só o sistema</a>
       </div>
 
-      <!-- COMPLETO -->
-      <div class="plan best">
-        <span class="badge">MAIS VENDIDO · TODOS OS BÔNUS</span>
-        <h3>Plano Completo</h3>
-        <p class="sub">Tudo do Básico + os 3 bônus. Sistema completo.</p>
-
-        <div class="ph" style="min-height:160px">[IMG-09 · Plano Completo · mockup rico: guia principal + quadro + cartões + 3 capas de bônus em leque + tablet, composição abundante, fundo creme, contraste dramático com o Plano Básico]</div>
-
+      <div class="plan top">
+        <span class="flag">MAIS ESCOLHIDO</span>
+        <h3>Completo</h3>
+        <p class="tl">O sistema + os 3 bônus.</p>
         <ul>
-          <li><span class="chk">✓</span> Guia principal · Sistema de 7 Dias</li>
-          <li><span class="chk">✓</span> Quadro de rotina · imprimível</li>
-          <li><span class="chk">✓</span> Cartões de blocos · imprimível</li>
-          <li><span class="chk">✓</span> Checklist diário · imprimível</li>
-          <li><span class="chk">✓</span> Bônus 1 · Comunicação Sem Guerra</li>
-          <li><span class="chk">✓</span> Bônus 2 · Telas Sem Conflito</li>
-          <li><span class="chk">✓</span> Bônus 3 · Adaptação Para Quem se Distrai</li>
+          <li><span class="y">✓</span> Guia dos 7 dias</li>
+          <li><span class="y">✓</span> Quadro de rotina</li>
+          <li><span class="y">✓</span> Cartões de blocos</li>
+          <li><span class="y">✓</span> Checklist diário</li>
+          <li><span class="y">✓</span> Comunicação Sem Guerra</li>
+          <li><span class="y">✓</span> Telas Sem Conflito</li>
+          <li><span class="y">✓</span> Para Quem se Distrai Fácil</li>
         </ul>
-
-        <div class="price">
-          <p class="before">Valor real R$133,60</p>
-          <p class="now">R$27,90</p>
-          <a href="#" class="btn">QUERO TUDO POR R$27,90 →</a>
-        </div>
+        <p class="old">Valor real R$133,60</p>
+        <p class="now">R$27,90</p>
+        <a href="#" class="cta">QUERO TUDO POR R$27,90</a>
       </div>
     </div>
 
-    <p class="center muted" style="margin-top:18px; font-size:14px">Pagamento seguro · Acesso imediato · 7 dias de garantia</p>
+    <p class="cta-sub" style="margin-top:20px">Pagamento seguro · Acesso imediato · 7 dias de garantia</p>
   </div>
 </section>
 
-<!-- ============ 9 · GARANTIA ============ -->
-<section>
+<!-- ========== 9 · GARANTIA ========== -->
+<section class="section">
+  <div class="wrap guar">
+    <img src="selo-garantia.webp" alt="Selo de garantia de 7 dias" loading="lazy" />
+    <div class="days">Garantia incondicional</div>
+    <h2>Se não funcionar, o dinheiro volta</h2>
+    <p class="muted" style="max-width:440px; margin:0 auto">Você testa o sistema completo com seu filho. Se em 7 dias não fizer sentido pra sua família, pede o reembolso e devolvemos 100%. Sem perguntas, sem burocracia.</p>
+  </div>
+</section>
+
+<!-- ========== 10 · FAQ ========== -->
+<section class="section tint">
   <div class="wrap">
-    <div class="seal-block">
-      <div class="ph">[IMG-10 · Selo · badge circular metálico "7 DIAS", cores navy + âmbar + toque de dourado, fundo transparente]</div>
-      <div class="txt">
-        <h3>Garantia incondicional de 7 dias</h3>
-        <p>Você testa o sistema completo. Se em 7 dias não fizer sentido pra sua família, é só pedir reembolso. 100% do valor de volta. Sem perguntas.</p>
-      </div>
+    <p class="kicker">Dúvidas</p>
+    <h2 class="center">Perguntas frequentes</h2>
+
+    <div style="margin-top:22px">
+      <details><summary>Meu filho tem muita resistência. Funciona?</summary><p>Funciona melhor com quem resiste mais. O sistema não depende de imposição — depende dele participar da construção.</p></details>
+      <details><summary>Serve pra qualquer idade?</summary><p>Feito pra 8 a 14 anos. Se adapta ao nível de autonomia de cada fase.</p></details>
+      <details><summary>Preciso ficar em cima todo dia?</summary><p>Só nos primeiros dias, junto na construção. Depois disso, o objetivo é você sair de cena.</p></details>
+      <details><summary>Ele se distrai com qualquer coisa.</summary><p>O sistema usa blocos curtos justamente por isso. E o Bônus 3 traz uma adaptação específica pra esse caso.</p></details>
+      <details><summary>Por quanto tempo tenho acesso?</summary><p>Vitalício, sem mensalidade. Chega no seu e-mail assim que o pagamento é confirmado.</p></details>
+      <details><summary>E se eu não gostar?</summary><p>7 dias de garantia. Reembolso de 100%, sem perguntas.</p></details>
+    </div>
+
+    <div style="margin-top:38px">
+      <a href="#planos" class="cta">QUERO ACABAR COM A BRIGA DO DEVER</a>
+      <p class="cta-sub">Acesso imediato · 7 dias de garantia</p>
     </div>
   </div>
 </section>
 
-<!-- ============ 10 · FAQ ============ -->
-<section class="section-alt">
-  <div class="wrap">
-    <p class="kicker center">Perguntas frequentes</p>
-    <h2 class="center">Dúvidas comuns</h2>
-
-    <details>
-      <summary>Meu filho tem muita resistência. Funciona?</summary>
-      <p>Funciona melhor com quem tem mais resistência. O sistema não depende de imposição. Depende dele participar da construção.</p>
-    </details>
-
-    <details>
-      <summary>Serve pra qualquer idade?</summary>
-      <p>Feito pra 8-14 anos. Adapta ao nível de autonomia de cada fase.</p>
-    </details>
-
-    <details>
-      <summary>Preciso ficar em cima toda hora?</summary>
-      <p>Só nos primeiros dias, junto na construção. Depois disso, o objetivo é você sair de cena.</p>
-    </details>
-
-    <details>
-      <summary>Meu filho se distrai fácil, mesmo com coisa pequena.</summary>
-      <p>O sistema usa blocos curtos justamente pensando nisso. E o Bônus 3 traz uma adaptação específica.</p>
-    </details>
-
-    <details>
-      <summary>Por quanto tempo tenho acesso?</summary>
-      <p>Vitalício. Sem mensalidade. Chega no seu e-mail assim que o pagamento é confirmado.</p>
-    </details>
-
-    <details>
-      <summary>E se não funcionar pra gente?</summary>
-      <p>7 dias de garantia. Reembolso 100%, sem perguntas.</p>
-    </details>
-
-    <div class="center" style="margin-top:26px">
-      <a href="#planos" class="btn big">QUERO ACABAR COM A BRIGA DO DEVER →</a>
-    </div>
-  </div>
-</section>
-
-<div class="footer">
+<div class="foot">
   <b>Meu Filho Estuda Sozinho · Sistema de 7 Dias</b>
   © 2026 · Todos os direitos reservados.<br>
-  Este site não é afiliado ao Facebook, Instagram ou Meta. Resultados variam de família para família. Conteúdo educacional, sem garantia de resultado específico.
+  Este site não é afiliado ao Facebook, Instagram ou Meta.<br>
+  Resultados variam de família para família. Conteúdo educacional, sem garantia de resultado específico.
 </div>
 
 <script>
   (function(){
-    var el=document.getElementById('timer'); if(!el) return;
-    var end=Date.now()+25*60*1000;
-    function tick(){
-      var s=Math.max(0,Math.floor((end-Date.now())/1000));
-      var m=Math.floor(s/60), r=s%60;
-      el.textContent=(m<10?'0':'')+m+':'+(r<10?'0':'')+r;
-      if(s>0) setTimeout(tick,1000);
-    }
-    tick();
+    var d=new Date();
+    var el=document.getElementById('hoje');
+    if(el) el.textContent=d.toLocaleDateString('pt-BR');
   })();
 </script>
 
