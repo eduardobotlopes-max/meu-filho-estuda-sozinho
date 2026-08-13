@@ -9,6 +9,7 @@
 <meta property="og:description" content="Rotina que seu filho ajuda a construir. Fim da briga do dever em 7 dias." />
 <meta property="og:image" content="/img-01.webp" />
 <meta name="theme-color" content="#2563EB" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563EB'/%3E%3Crect x='14' y='16' width='36' height='7' rx='3.5' fill='white'/%3E%3Crect x='14' y='28' width='24' height='7' rx='3.5' fill='%23F97316'/%3E%3Crect x='14' y='40' width='30' height='7' rx='3.5' fill='white'/%3E%3C/svg%3E" />
 <style>
   :root{
     --blue:#2563EB; --blue-dark:#1D4ED8; --blue-deep:#111827;
@@ -134,6 +135,12 @@
   .rev .rl{color:var(--ink-soft); font-size:13px}
   .rev .st{color:#FBBF24; font-size:14px; letter-spacing:2px; margin-bottom:8px}
   .rev p{margin:0; font-size:15px; color:var(--ink-2)}
+
+  .rev .av.ph-av{
+    background:var(--blue-soft); color:#5B7CC4; border:1.5px dashed #A9C4FF;
+    font-size:8.5px; letter-spacing:0;
+  }
+  .rev .av img{width:100%; height:100%; border-radius:50%; object-fit:cover}
 
   /* ===== Bônus ===== */
   .bonus{background:#fff; border:1px solid var(--line); border-radius:14px; overflow:hidden; margin:16px 0}
@@ -265,6 +272,15 @@
   .scarce{font-size:12.5px; color:var(--ink-soft); margin:14px 0 0}
   .scarce b{color:var(--orange)}
 
+  .parc{text-align:center; font-size:14px; color:var(--ink-soft); margin:-12px 0 6px}
+  .parc b{color:var(--ink)}
+  .economia{
+    display:inline-block; background:#DCFCE7; color:#15803D; font-weight:800;
+    font-size:13px; padding:7px 14px; border-radius:8px; margin:0 auto 16px;
+    text-align:center;
+  }
+  .plan .economia{display:block; width:fit-content}
+
   /* confete */
   #confetti{position:fixed; inset:0; pointer-events:none; z-index:1000; overflow:hidden; display:none}
   #confetti.on{display:block}
@@ -328,7 +344,7 @@
 <section class="section">
   <div class="wrap">
     <p class="kicker">O que você recebe</p>
-    <h2 class="center">Um kit pra imprimir e usar hoje mesmo</h2>
+    <h2 class="center">Um kit completo pra 1 mês inteiro</h2>
     <p class="center muted">Sem app. Sem assinatura. Sem curso em vídeo pra assistir.</p>
 
     <img class="shot" src="img-03.webp" alt="Quadro de rotina, cartões de blocos e checklist impressos" style="margin:26px 0" loading="lazy" />
@@ -348,7 +364,11 @@
       </div>
       <div class="tile">
         <img src="img-13.webp" alt="Checklist diário preenchido" loading="lazy" />
-        <h3>Checklist diário</h3><p>Ele marca sozinho. Você sai de cena.</p>
+        <h3>Checklist de 30 dias</h3><p>Ele marca sozinho. Você sai de cena.</p>
+      </div>
+      <div class="tile" style="grid-column:1/-1">
+        <div class="ph tile-img">[IMG-15 · Certificado de Mérito impresso, moldura azul e laranja, sobre a mesa]</div>
+        <h3>Certificado de Mérito</h3><p>Pra entregar quando ele completar o ciclo. Fecha a conquista com nome e assinatura.</p>
       </div>
     </div>
   </div>
@@ -357,15 +377,15 @@
 <!-- ========== 3B · VEJA POR DENTRO ========== -->
 <section class="section tint">
   <div class="wrap">
-    <p class="kicker">Veja por dentro</p>
-    <h2 class="center">Não é um PDF de 5 páginas</h2>
-    <p class="center muted">São 35 páginas de material, mais 3 folhas prontas pra imprimir.</p>
+    <p class="kicker">Veja uma amostra</p>
+    <h2 class="center">São <span class="blue">64 páginas</span>, não um PDF de 5</h2>
+    <p class="center muted">22 páginas de guia, 24 folhas pra imprimir e 18 de bônus. Tudo pronto pra usar hoje.</p>
 
     <img class="shot" src="img-14.webp" alt="Prévia das páginas do material" style="margin:26px 0" loading="lazy" />
 
     <div class="counts">
-      <div><b>14</b><span>páginas de guia</span></div>
-      <div><b>3</b><span>folhas imprimíveis</span></div>
+      <div><b>22</b><span>páginas de guia</span></div>
+      <div><b>24</b><span>folhas imprimíveis</span></div>
       <div><b>18</b><span>páginas de bônus</span></div>
     </div>
   </div>
@@ -411,19 +431,19 @@
     <h2 class="center">O que outros pais dizem</h2>
 
     <div class="rev">
-      <div class="top"><div class="av">AP</div><div><div class="nm">Ana P.</div><div class="rl">mãe de menino de 10 anos</div></div></div>
+      <div class="top"><div class="av ph-av">IMG-16</div><div><div class="nm">Ana P.</div><div class="rl">mãe de menino de 10 anos</div></div></div>
       <div class="st">★★★★★</div>
       <p>"A gente brigava todo dia na hora do dever. No terceiro dia usando o sistema, ele pegou o caderno sem eu falar nada. Chorei."</p>
     </div>
 
     <div class="rev">
-      <div class="top"><div class="av">MT</div><div><div class="nm">Marcos T.</div><div class="rl">pai de menina de 12 anos</div></div></div>
+      <div class="top"><div class="av ph-av">IMG-17</div><div><div class="nm">Marcos T.</div><div class="rl">pai de menina de 12 anos</div></div></div>
       <div class="st">★★★★★</div>
       <p>"Já tinha comprado agenda, quadro, de tudo. A diferença foi ela ter ajudado a montar o dela. Isso mudou tudo."</p>
     </div>
 
     <div class="rev">
-      <div class="top"><div class="av">RS</div><div><div class="nm">Renata S.</div><div class="rl">mãe solo, 2 filhos</div></div></div>
+      <div class="top"><div class="av ph-av">IMG-18</div><div><div class="nm">Renata S.</div><div class="rl">mãe solo, 2 filhos</div></div></div>
       <div class="st">★★★★★</div>
       <p>"Não é mágica. Mas em uma semana parei de repetir cinco vezes a mesma coisa. Pra mim, já valeu."</p>
     </div>
@@ -482,13 +502,15 @@
           <li><span class="y">✓</span> Guia dos 7 dias</li>
           <li><span class="y">✓</span> Quadro de rotina</li>
           <li><span class="y">✓</span> Cartões de blocos</li>
-          <li><span class="y">✓</span> Checklist diário</li>
+          <li><span class="y">✓</span> Checklist de 30 dias</li>
+          <li><span class="y">✓</span> Certificado de Mérito</li>
           <li class="off"><span class="n">✕</span> Comunicação Sem Guerra</li>
           <li class="off"><span class="n">✕</span> Telas Sem Conflito</li>
           <li class="off"><span class="n">✕</span> Para Quem se Distrai Fácil</li>
         </ul>
         <p class="old">Antes R$57,90</p>
         <p class="now">R$27,90</p>
+        <p class="parc">ou 12x de <b>R$2,85</b> no cartão</p>
         <a href="#" class="cta ghost" id="btn-basico">Comprar só o sistema</a>
       </div>
 
@@ -501,13 +523,16 @@
           <li><span class="y">✓</span> Guia dos 7 dias</li>
           <li><span class="y">✓</span> Quadro de rotina</li>
           <li><span class="y">✓</span> Cartões de blocos</li>
-          <li><span class="y">✓</span> Checklist diário</li>
+          <li><span class="y">✓</span> Checklist de 30 dias</li>
+          <li><span class="y">✓</span> Certificado de Mérito</li>
           <li><span class="y">✓</span> Comunicação Sem Guerra</li>
           <li><span class="y">✓</span> Telas Sem Conflito</li>
           <li><span class="y">✓</span> Para Quem se Distrai Fácil</li>
         </ul>
         <p class="old">Valor real R$133,60</p>
         <p class="now">R$47,90</p>
+        <p class="parc">ou 12x de <b>R$4,89</b> no cartão</p>
+        <p class="economia">Você economiza R$85,70</p>
         <a href="#" class="cta">QUERO TUDO POR R$47,90</a>
       </div>
     </div>
@@ -520,8 +545,9 @@
 <section class="section">
   <div class="wrap guar">
     <img src="selo-garantia.webp" alt="Selo de garantia de 7 dias" loading="lazy" />
-    <h2>Se não funcionar, o dinheiro volta</h2>
-    <p class="muted" style="max-width:440px; margin:0 auto">Você testa o sistema completo com seu filho. Se em 7 dias não fizer sentido pra sua família, pede o reembolso e devolvemos 100%. Sem perguntas, sem burocracia.</p>
+    <h2>Você não corre <span style="color:#16A34A">nenhum risco</span></h2>
+    <p class="muted" style="max-width:460px; margin:0 auto 6px">Garantia incondicional de 7 dias. Se não gostar, devolvemos seu dinheiro.</p>
+    <p class="muted" style="max-width:460px; margin:0 auto; font-size:14px">Você testa o sistema inteiro com seu filho. Se não fizer sentido pra sua família, é só pedir. Sem perguntas, sem burocracia, sem formulário.</p>
   </div>
 </section>
 
@@ -557,6 +583,21 @@
 <!-- ========== POP-UP DE VOUCHER (3 estágios) ========== -->
 <div id="confetti"></div>
 
+<!-- exit intent -->
+<div class="ov" id="exitpop" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="x" id="e-x" aria-label="Fechar">&times;</button>
+    <div class="noteCard">
+      <span class="tagline">Espera! Não vá embora ainda</span>
+      <h3>Seu voucher de <span style="color:#16A34A">42% OFF</span> ainda está ativo 🍀</h3>
+      <p>Você pode levar o plano <b>Completo</b>, com os 3 bônus, pelo preço do Básico. É a última vez que essa oferta aparece nesta visita.</p>
+    </div>
+    <div class="pricebox"><s>R$47,90</s> <b>R$27,90</b></div>
+    <a href="#" class="cta green" id="e-go">QUERO MEU VOUCHER DE 42% OFF</a>
+    <button class="no" id="e-no">Não, quero sair mesmo assim</button>
+  </div>
+</div>
+
 <div class="ov" id="voucher" role="dialog" aria-modal="true">
   <div class="modal">
     <button class="x" id="v-x" aria-label="Fechar">&times;</button>
@@ -575,7 +616,7 @@
     <!-- Estágio 2 · resgatar -->
     <div class="stage" id="st2">
       <h3>Resgate Seu Voucher 🎁</h3>
-      <p class="lead">Clique em Resgatar Agora para revelar o seu desconto de primeiro acesso.</p>
+      <p class="lead">Clique em Resgatar Agora para revelar o que o seu voucher libera.</p>
 
       <div class="vouch">
         <div class="mark">🎟️</div>
@@ -591,21 +632,29 @@
     <!-- Estágio 3 · resgatado -->
     <div class="stage" id="st3">
       <h3>Voucher Resgatado! 🎉</h3>
-      <p class="lead">Clique abaixo para finalizar seu acesso e garantir o desconto.</p>
+      <p class="lead">Seu voucher libera o <b>plano Completo</b> pelo preço do Básico.</p>
 
       <div class="vouch won">
         <div class="mark">✓</div>
-        <div class="off">29% OFF</div>
-        <div class="offsub">de desconto</div>
-        <p class="fine">Pelo seu primeiro acesso você ganhou um bônus de 29% OFF, válido somente uma vez.</p>
+        <div class="off">42% OFF</div>
+        <div class="offsub">no plano Completo</div>
+        <p class="fine">Você ia pagar R$27,90 pelo Básico. Com o voucher, leva o <b>Completo com os 3 bônus</b> por esse mesmo valor.</p>
         <div class="barcode"></div>
         <div class="barnum">2 3 7 8 4 9 5 6 0 1 2 3</div>
       </div>
 
-      <div class="pricebox"><s>R$27,90</s> <b>R$19,90</b></div>
+      <div class="gain">
+        <ul>
+          <li><b>+</b> Comunicação Sem Guerra</li>
+          <li><b>+</b> Telas Sem Conflito</li>
+          <li><b>+</b> Para Quem se Distrai Fácil</li>
+        </ul>
+      </div>
+
+      <div class="pricebox"><s>R$47,90</s> <b>R$27,90</b></div>
 
       <a href="#" class="cta green" id="v-finish">Finalizar Acesso</a>
-      <button class="no" id="v-no3">Não quero o desconto</button>
+      <button class="no" id="v-no3">Não, quero só o Básico por R$27,90</button>
     </div>
   </div>
 </div>
@@ -616,8 +665,8 @@
     if(el) el.textContent=d.toLocaleDateString('pt-BR');
 
     // ---- links de checkout (trocar pelos da Hotmart) ----
-    var LINK_BASICO   = '#';   // Básico R$27,90 (sem voucher)
-    var LINK_VOUCHER  = '#';   // Básico com voucher R$19,90
+    var LINK_BASICO   = '#';   // Básico R$27,90
+    var LINK_VOUCHER  = '#';   // Completo com voucher R$27,90
     var LINK_COMPLETO = '#';   // Completo R$47,90
 
     var ov   = document.getElementById('voucher');
@@ -687,6 +736,46 @@
     ov.addEventListener('click', function(e){ if(e.target===ov) close(); });
     document.addEventListener('keydown', function(e){
       if(e.key==='Escape' && ov.classList.contains('on')) close();
+    });
+
+    // ---------- Exit intent ----------
+    var ex = document.getElementById('exitpop');
+    var exitJaMostrou = false;
+
+    function abrirExit(){
+      if(exitJaMostrou) return;
+      if(ov.classList.contains('on')) return;   // nao empilha com o voucher
+      exitJaMostrou = true;
+      ex.classList.add('on');
+      document.body.style.overflow='hidden';
+    }
+    function fecharExit(){
+      ex.classList.remove('on');
+      document.body.style.overflow='';
+    }
+
+    // desktop: mouse saindo pelo topo
+    document.addEventListener('mouseout', function(e){
+      if(!e.relatedTarget && e.clientY <= 8) abrirExit();
+    });
+    // mobile: scroll rapido pra cima perto do topo
+    var ultY = window.scrollY;
+    window.addEventListener('scroll', function(){
+      var y = window.scrollY;
+      if(ultY - y > 90 && y < 420) abrirExit();
+      ultY = y;
+    }, {passive:true});
+    // saida por inatividade longa nao dispara nada (evita irritar)
+
+    document.getElementById('e-x').addEventListener('click', fecharExit);
+    document.getElementById('e-no').addEventListener('click', fecharExit);
+    document.getElementById('e-go').addEventListener('click', function(e){
+      if(LINK_VOUCHER==='#'){ e.preventDefault(); fecharExit(); }
+      else { this.href = LINK_VOUCHER; }
+    });
+    ex.addEventListener('click', function(e){ if(e.target===ex) fecharExit(); });
+    document.addEventListener('keydown', function(e){
+      if(e.key==='Escape' && ex.classList.contains('on')) fecharExit();
     });
   })();
 </script>
