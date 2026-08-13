@@ -142,6 +142,12 @@
   }
   .rev .av img{width:100%; height:100%; border-radius:50%; object-fit:cover}
 
+  .wa-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:14px}
+  .wa-shot{margin:0; background:#fff; border:1px solid var(--line); border-radius:14px; padding:10px; box-shadow:0 8px 24px rgba(20,30,50,.08)}
+  .wa-shot img{width:100%; display:block; border-radius:9px}
+  .wa-shot figcaption{text-align:center; font-size:13px; color:var(--ink-soft); margin-top:8px; font-weight:600}
+  @media (max-width:640px){ .wa-grid{grid-template-columns:1fr} }
+
   /* ===== Bônus ===== */
   .bonus{background:#fff; border:1px solid var(--line); border-radius:14px; overflow:hidden; margin:16px 0}
   .bonus .ph{border-radius:0; border:0; border-bottom:1px solid var(--line)}
@@ -434,16 +440,15 @@
     <p class="kicker">Famílias reais</p>
     <h2 class="center">O que outros pais dizem</h2>
 
-    <div class="rev">
-      <div class="top"><div class="av">FC</div><div><div class="nm">Fabiana Costa</div><div class="rl">mãe</div></div></div>
-      <div class="st">★★★★★</div>
-      <p>"No começo achei que não ia funcionar, mas decidi tentar. Hoje ele consegue prestar muito mais atenção e termina as atividades sem aquela luta de antes."</p>
-    </div>
-
-    <div class="rev">
-      <div class="top"><div class="av">MO</div><div><div class="nm">Marcelo Oliveira</div><div class="rl">pai</div></div></div>
-      <div class="st">★★★★★</div>
-      <p>"Só vim dizer que antes era uma briga todos os dias na hora do dever. Agora ele senta sozinho e consegue se concentrar muito mais."</p>
+    <div class="wa-grid">
+      <figure class="wa-shot">
+        <img src="img-16.webp" alt="Print de WhatsApp de Fabiana Costa contando que o filho passou a prestar mais atenção e terminar as atividades sozinho" loading="lazy" />
+        <figcaption>Fabiana Costa · mãe</figcaption>
+      </figure>
+      <figure class="wa-shot">
+        <img src="img-17.webp" alt="Print de WhatsApp de Marcelo Oliveira contando que a briga na hora do dever acabou e o filho senta sozinho pra estudar" loading="lazy" />
+        <figcaption>Marcelo Oliveira · pai</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -581,21 +586,6 @@
 
 <!-- ========== POP-UP DE VOUCHER (3 estágios) ========== -->
 <div id="confetti"></div>
-
-<!-- exit intent -->
-<div class="ov" id="exitpop" role="dialog" aria-modal="true">
-  <div class="modal">
-    <button class="x" id="e-x" aria-label="Fechar">&times;</button>
-    <div class="noteCard">
-      <span class="tagline">Espera! Não vá embora ainda</span>
-      <h3>Seu voucher de <span style="color:#16A34A">42% OFF</span> ainda está ativo</h3>
-      <p>Você pode levar o plano <b>Completo</b>, com os 3 bônus, pelo preço do Básico. É a última vez que essa oferta aparece nesta visita.</p>
-    </div>
-    <div class="pricebox"><s>R$47,90</s> <b>R$27,90</b></div>
-    <a href="#" class="cta green" id="e-go">QUERO MEU VOUCHER DE 42% OFF</a>
-    <button class="no" id="e-no">Não, quero sair mesmo assim</button>
-  </div>
-</div>
 
 <div class="ov" id="voucher" role="dialog" aria-modal="true">
   <div class="modal">
@@ -741,45 +731,6 @@
       if(e.key==='Escape' && ov.classList.contains('on')) close();
     });
 
-    // ---------- Exit intent ----------
-    var ex = document.getElementById('exitpop');
-    var exitJaMostrou = false;
-
-    function abrirExit(){
-      if(exitJaMostrou) return;
-      if(ov.classList.contains('on')) return;   // nao empilha com o voucher
-      exitJaMostrou = true;
-      ex.classList.add('on');
-      document.body.style.overflow='hidden';
-    }
-    function fecharExit(){
-      ex.classList.remove('on');
-      document.body.style.overflow='';
-    }
-
-    // desktop: mouse saindo pelo topo
-    document.addEventListener('mouseout', function(e){
-      if(!e.relatedTarget && e.clientY <= 8) abrirExit();
-    });
-    // mobile: scroll rapido pra cima perto do topo
-    var ultY = window.scrollY;
-    window.addEventListener('scroll', function(){
-      var y = window.scrollY;
-      if(ultY - y > 90 && y < 420) abrirExit();
-      ultY = y;
-    }, {passive:true});
-    // saida por inatividade longa nao dispara nada (evita irritar)
-
-    document.getElementById('e-x').addEventListener('click', fecharExit);
-    document.getElementById('e-no').addEventListener('click', fecharExit);
-    document.getElementById('e-go').addEventListener('click', function(e){
-      if(LINK_VOUCHER==='#'){ e.preventDefault(); fecharExit(); }
-      else { this.href = LINK_VOUCHER; }
-    });
-    ex.addEventListener('click', function(e){ if(e.target===ex) fecharExit(); });
-    document.addEventListener('keydown', function(e){
-      if(e.key==='Escape' && ex.classList.contains('on')) fecharExit();
-    });
   })();
 </script>
 
