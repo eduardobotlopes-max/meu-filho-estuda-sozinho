@@ -284,11 +284,15 @@
   /* confete */
   #confetti{position:fixed; inset:0; pointer-events:none; z-index:1000; overflow:hidden; display:none}
   #confetti.on{display:block}
-  .cf{position:absolute; width:9px; height:14px; opacity:0; animation:fall linear forwards}
-  @keyframes fall{
-    0%{opacity:1; transform:translateY(-8vh) rotate(0deg)}
-    100%{opacity:0; transform:translateY(105vh) rotate(720deg)}
+  .cf{
+    position:absolute; width:8px; height:12px; top:-6vh; opacity:0;
+    will-change:transform,opacity; animation:fall linear forwards;
   }
+  @keyframes fall{
+    0%{opacity:1; transform:translate3d(0,0,0) rotate(0deg)}
+    100%{opacity:0; transform:translate3d(0,110vh,0) rotate(360deg)}
+  }
+  @media (prefers-reduced-motion:reduce){ .cf{display:none} }
 
   .foot{background:var(--blue-deep); color:#8A94A3; text-align:center; padding:34px 22px; font-size:13px; line-height:1.6}
   .foot b{color:#fff; display:block; margin-bottom:8px; font-size:15px}
@@ -701,17 +705,21 @@
     function confetti(){
       conf.innerHTML=''; conf.classList.add('on');
       var cores=['#2563EB','#F97316','#FBBF24','#16A34A','#60A5FA','#FB923C'];
-      for(var i=0;i<90;i++){
+      var N = (window.innerWidth < 600 || navigator.hardwareConcurrency <= 4) ? 28 : 45;
+      for(var i=0;i<N;i++){
         var p=document.createElement('div');
         p.className='cf';
         p.style.left=(Math.random()*100)+'vw';
         p.style.background=cores[(Math.random()*cores.length)|0];
-        p.style.animationDuration=(2.2+Math.random()*1.8)+'s';
-        p.style.animationDelay=(Math.random()*.45)+'s';
+        p.style.animationDuration=(1.9+Math.random()*1.2)+'s';
+        p.style.animationDelay=(Math.random()*.35)+'s';
         if(Math.random()>.6) p.style.borderRadius='50%';
         conf.appendChild(p);
       }
-      setTimeout(function(){ conf.classList.remove('on'); }, 4600);
+      setTimeout(function(){
+        conf.classList.remove('on');
+        conf.innerHTML='';           // libera o DOM
+      }, 3400);
     }
 
     if(btn) btn.addEventListener('click', open);
