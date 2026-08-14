@@ -142,10 +142,11 @@
   }
   .rev .av img{width:100%; height:100%; border-radius:50%; object-fit:cover}
 
-  .wa-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:14px}
+  .wa-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:14px}
   .wa-shot{margin:0; background:#fff; border:1px solid var(--line); border-radius:14px; padding:10px; box-shadow:0 8px 24px rgba(20,30,50,.08)}
   .wa-shot img{width:100%; display:block; border-radius:9px}
   .wa-shot figcaption{text-align:center; font-size:13px; color:var(--ink-soft); margin-top:8px; font-weight:600}
+  @media (max-width:900px){ .wa-grid{grid-template-columns:1fr 1fr} }
   @media (max-width:640px){ .wa-grid{grid-template-columns:1fr} }
 
   /* ===== Bônus ===== */
@@ -355,13 +356,13 @@
   <div class="wrap">
     <p class="kicker">O que você recebe</p>
     <h2 class="center">Um kit completo pra 1 mês inteiro</h2>
-    <p class="center muted">Sem app. Sem assinatura. Sem curso em vídeo pra assistir.</p>
+    <p class="center muted">Sem assinatura. Sem curso em vídeo pra assistir.</p>
 
     <img class="shot" src="img-03.webp" alt="Quadro de rotina, cartões de blocos e checklist impressos" style="margin:26px 0" loading="lazy" />
 
     <div class="grid">
       <div class="tile">
-        <img src="img-10.webp" alt="Guia dos 7 Dias, capa azul com ilustração de mãe e filho estudando" loading="lazy" />
+        <img src="img-18.webp" alt="Guia dos 7 Dias, quadro de rotina, cartões de blocos e checklist" loading="lazy" />
         <h3>Guia dos 7 dias</h3><p>Passo a passo, do Dia 1 até a autonomia.</p>
       </div>
       <div class="tile">
@@ -449,6 +450,10 @@
         <img src="img-17.webp" alt="Print de WhatsApp de Marcelo Oliveira contando que a briga na hora do dever acabou e o filho senta sozinho pra estudar" loading="lazy" />
         <figcaption>Marcelo Oliveira · pai</figcaption>
       </figure>
+      <figure class="wa-shot">
+        <img src="img-19.webp" alt="Print de WhatsApp de Juliana Martins contando que o filho pegou o caderno sozinho no terceiro dia usando o sistema" loading="lazy" />
+        <figcaption>Juliana Martins · mãe</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -513,8 +518,7 @@
           <li class="off"><span class="n">✕</span> Para Quem se Distrai Fácil</li>
         </ul>
         <p class="old">Antes R$57,90</p>
-        <p class="now">R$27,90</p>
-        <p class="parc">ou 12x de <b>R$2,85</b> no cartão</p>
+        <p class="now">R$14,90</p>
         <a href="#" class="cta ghost" id="btn-basico">Comprar só o sistema</a>
       </div>
 
@@ -534,10 +538,10 @@
           <li><span class="y">✓</span> Para Quem se Distrai Fácil</li>
         </ul>
         <p class="old">Valor real R$133,60</p>
-        <p class="now">R$47,90</p>
-        <p class="parc">ou 12x de <b>R$4,89</b> no cartão</p>
-        <p class="economia">Você economiza R$85,70</p>
-        <a href="#" class="cta">QUERO TUDO POR R$47,90</a>
+        <p class="now">R$37,90</p>
+        <p class="parc">ou 12x de <b>R$3,16</b> no cartão</p>
+        <p class="economia">Você economiza R$95,70</p>
+        <a href="#" class="cta">QUERO TUDO POR R$37,90</a>
       </div>
     </div>
 
@@ -621,13 +625,13 @@
     <!-- Estágio 3 · resgatado -->
     <div class="stage" id="st3">
       <h3>Voucher Resgatado! 🎉</h3>
-      <p class="lead">Seu voucher libera o <b>plano Completo</b> pelo preço do Básico.</p>
+      <p class="lead">Seu voucher libera o <b>plano Completo</b> com desconto exclusivo.</p>
 
       <div class="vouch won">
         <div class="mark">✓</div>
-        <div class="off">42% OFF</div>
+        <div class="off">26% OFF</div>
         <div class="offsub">no plano Completo</div>
-        <p class="fine">Você ia pagar R$27,90 pelo Básico. Com o voucher, leva o <b>Completo com os 3 bônus</b> por esse mesmo valor.</p>
+        <p class="fine">O Completo custa R$37,90. Com o voucher, você leva com os <b>3 bônus inclusos</b> por R$27,90.</p>
         <div class="barcode"></div>
         <div class="barnum">2 3 7 8 4 9 5 6 0 1 2 3</div>
       </div>
@@ -640,10 +644,10 @@
         </ul>
       </div>
 
-      <div class="pricebox"><s>R$47,90</s> <b>R$27,90</b></div>
+      <div class="pricebox"><s>R$37,90</s> <b>R$27,90</b></div>
 
       <a href="#" class="cta green" id="v-finish">Finalizar Acesso</a>
-      <button class="no" id="v-no3">Não, quero só o Básico por R$27,90</button>
+      <button class="no" id="v-no3">Não, quero só o Básico por R$14,90</button>
     </div>
   </div>
 </div>
@@ -654,9 +658,9 @@
     if(el) el.textContent=d.toLocaleDateString('pt-BR');
 
     // ---- links de checkout (trocar pelos da Hotmart) ----
-    var LINK_BASICO   = '#';   // Básico R$27,90
+    var LINK_BASICO   = '#';   // Básico R$14,90
     var LINK_VOUCHER  = '#';   // Completo com voucher R$27,90
-    var LINK_COMPLETO = '#';   // Completo R$47,90
+    var LINK_COMPLETO = '#';   // Completo R$37,90
 
     var ov   = document.getElementById('voucher');
     var btn  = document.getElementById('btn-basico');
