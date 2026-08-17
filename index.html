@@ -261,6 +261,17 @@
   }
   .barnum{font-size:11px; letter-spacing:.18em; color:var(--ink-soft); font-weight:600}
 
+  .gain{
+    background:#F0FDF4; border:1px solid #86EFAC; border-radius:12px;
+    padding:14px 16px; margin:0 auto 18px; max-width:290px; text-align:left;
+  }
+  .gain ul{list-style:none; margin:0; padding:0}
+  .gain li{
+    display:flex; align-items:flex-start; gap:9px; padding:5px 0;
+    font-size:13.5px; color:#14532D; font-weight:600; line-height:1.4;
+  }
+  .gain li b{color:#16A34A; flex:0 0 auto; font-size:15px; line-height:1.25}
+
   .pricebox{
     display:flex; align-items:center; justify-content:center; gap:12px;
     margin:0 0 18px; font-weight:800;
@@ -672,8 +683,9 @@
     var conf = document.getElementById('confetti');
     var skip = false;
 
-    // fallback direto nos hrefs (funciona mesmo se o JS falhar em carregar)
-    if(btn) btn.href = LINK_BASICO;
+    // ATENÇÃO: o btn-basico NÃO recebe href real de propósito.
+    // No celular o navegador segue o href antes do JS abrir o pop-up,
+    // e o voucher era pulado. Quem navega é o JS, sempre.
     var btnCompleto = document.getElementById('btn-completo');
     if(btnCompleto) btnCompleto.href = LINK_COMPLETO;
 
