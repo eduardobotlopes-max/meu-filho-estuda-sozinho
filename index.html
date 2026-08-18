@@ -17,7 +17,7 @@
     --orange:#F97316; --orange-dark:#EA6A0A;
     --ink:#111827; --ink-2:#374151; --ink-soft:#6B7280;
     --bg:#FFFFFF; --bg-2:#F8FAFC;
-    --line:#E5E7EB; --ok:#16A34A;
+    --line:#E5E7EB; --ok:#16A34A; --red:#DC2626;
     --wrap:640px;
   }
   *{box-sizing:border-box}
@@ -157,7 +157,7 @@
   .bonus h3{margin:0 0 6px}
   .bonus p{font-size:15px; margin:0 0 12px; color:var(--ink-soft)}
   .val{display:flex; gap:10px; align-items:baseline}
-  .val .old{text-decoration:line-through; color:var(--ink-soft); font-size:14px; font-weight:600}
+  .val .old{text-decoration:line-through; color:var(--red); font-size:14px; font-weight:700}
   .val .new{color:var(--ok); font-weight:800; font-size:15px}
 
   /* ===== Planos ===== */
@@ -176,7 +176,7 @@
   .plan li:last-child{border-bottom:0}
   .plan li.off{color:#B6BCC6}
   .plan li .y{color:var(--ok); font-weight:800; flex:0 0 auto}
-  .plan li .n{color:#D3D7DE; font-weight:800; flex:0 0 auto}
+  .plan li .n{color:var(--red); font-weight:800; flex:0 0 auto}
   .plan .old{text-align:center; color:var(--ink-soft); text-decoration:line-through; font-size:15px; margin:0}
   .plan .now{text-align:center; font-size:38px; font-weight:900; color:var(--ink); margin:2px 0 20px; letter-spacing:-.03em}
   .plan.top .now{color:var(--orange)}
@@ -276,7 +276,7 @@
     display:flex; align-items:center; justify-content:center; gap:12px;
     margin:0 0 18px; font-weight:800;
   }
-  .pricebox s{color:var(--ink-soft); font-weight:600; font-size:17px}
+  .pricebox s{color:var(--red); font-weight:700; font-size:17px}
   .pricebox b{color:#16A34A; font-size:30px; letter-spacing:-.02em}
 
   .modal .cta{max-width:100%}
