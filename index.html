@@ -106,21 +106,39 @@
 
   /* Carrossel animado do entregável */
   .peekwrap{
-    margin:22px -22px -56px; padding-bottom:56px; overflow:hidden;
-    -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
-    mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
+    margin:22px -22px 0; padding:6px 0 14px;
+    overflow:hidden; position:relative;
   }
   .peektrack{
-    display:flex; gap:14px; width:max-content;
-    animation:peekscroll 26s linear infinite;
+    display:flex; width:max-content;
+    animation:peekscroll 34s linear infinite;
+    will-change:transform;
+    transform:translate3d(0,0,0);
+    -webkit-backface-visibility:hidden; backface-visibility:hidden;
   }
+  /* margin no lugar de gap: garante que -50% feche o loop exato */
   .peektrack img{
-    height:200px; width:auto; border-radius:10px; border:1px solid var(--line);
-    box-shadow:0 8px 22px rgba(20,30,50,.10); flex:0 0 auto; display:block;
+    height:200px; width:auto; margin-right:14px;
+    border-radius:10px; border:1px solid var(--line);
+    box-shadow:0 6px 16px rgba(20,30,50,.10);
+    flex:0 0 auto; display:block;
+    -webkit-backface-visibility:hidden; backface-visibility:hidden;
   }
-  @keyframes peekscroll{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
-  .peekwrap:hover .peektrack{ animation-play-state:paused }
-  @media (prefers-reduced-motion:reduce){ .peektrack{animation:none; overflow-x:auto} }
+  @keyframes peekscroll{
+    from{transform:translate3d(0,0,0)}
+    to{transform:translate3d(-50%,0,0)}
+  }
+  /* pausar só onde existe mouse de verdade — no toque isso travava a animação */
+  @media (hover:hover) and (pointer:fine){
+    .peekwrap:hover .peektrack{ animation-play-state:paused }
+  }
+  @media (max-width:600px){
+    .peektrack img{height:158px; margin-right:10px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .peekwrap{overflow-x:auto; -webkit-overflow-scrolling:touch}
+    .peektrack{animation:none}
+  }
   .counts{
     display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-top:6px;
   }
