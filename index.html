@@ -114,16 +114,19 @@
     animation:peekscroll 12s linear infinite;
     transform:translate3d(0,0,0);
   }
-  /* margin no lugar de gap: garante que -50% feche o loop exato */
+  /* Largura FIXA em px, nunca auto: com width:auto a pista muda de tamanho
+     enquanto as imagens decodificam e o -50% cai no lugar errado (loop quebrado
+     e imagem cortada). 8 imagens únicas duplicadas = 16 itens.
+     141 + 14 = 155px por item -> meia pista = 8 x 155 = 1240px */
   .peektrack img{
-    height:200px; width:auto; margin-right:14px;
+    width:141px; height:200px; margin-right:14px;
     border-radius:10px; border:1px solid var(--line);
     box-shadow:0 6px 16px rgba(20,30,50,.10);
-    flex:0 0 auto; display:block;
+    flex:0 0 141px; display:block;
   }
   @keyframes peekscroll{
     from{transform:translate3d(0,0,0)}
-    to{transform:translate3d(-50%,0,0)}
+    to{transform:translate3d(-1240px,0,0)}
   }
   /* pausar só onde existe mouse de verdade — no toque isso travava a animação */
   @media (hover:hover) and (pointer:fine){
@@ -131,7 +134,12 @@
   }
   @media (max-width:600px){
     .peektrack{animation-duration:9s}
-    .peektrack img{height:140px; margin-right:10px}
+    /* 99 + 10 = 109px por item -> meia pista = 8 x 109 = 872px */
+    .peektrack img{width:99px; height:140px; margin-right:10px; flex:0 0 99px}
+    @keyframes peekscroll{
+      from{transform:translate3d(0,0,0)}
+      to{transform:translate3d(-872px,0,0)}
+    }
   }
   @media (prefers-reduced-motion:reduce){
     .peekwrap{overflow-x:auto; -webkit-overflow-scrolling:touch}
@@ -501,7 +509,7 @@
     </div>
 
     <p class="kicker" style="margin-top:38px">Por dentro do material</p>
-    <h3 class="center" style="font-weight:700">Passe o dedo e veja as páginas reais</h3>
+    <h3 class="center" style="font-weight:700">Uma amostra das páginas reais</h3>
 
     <div class="peekwrap">
       <div class="peektrack">
@@ -530,7 +538,7 @@
 <!-- ========== 3B · VEJA POR DENTRO ========== -->
 <section class="section tint">
   <div class="wrap">
-    <p class="kicker">Veja uma amostra</p>
+    <p class="kicker">O material completo</p>
     <h2 class="center">São <span class="blue">68 páginas</span>, não um PDF de 5</h2>
     <p class="center muted">26 páginas de guia, 24 folhas pra imprimir e 18 de bônus. Tudo pronto pra usar hoje.</p>
 
