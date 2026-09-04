@@ -113,13 +113,13 @@
   }
   .peektrack{
     display:flex; width:max-content;
-    animation:peekscroll 29s linear infinite;
+    animation:peekscroll 30s linear infinite;
     transform:translate3d(0,0,0);
   }
   /* Largura FIXA em px, nunca auto: com width:auto a pista muda de tamanho
      enquanto as imagens decodificam e o -50% cai no lugar errado (loop quebrado
-     e imagem cortada). 19 imagens únicas duplicadas = 38 itens.
-     141 + 14 = 155px por item -> meia pista = 19 x 155 = 2945px */
+     e imagem cortada). 20 imagens únicas duplicadas = 40 itens.
+     141 + 14 = 155px por item -> meia pista = 20 x 155 = 3100px */
   .peektrack img{
     width:141px; height:200px; margin-right:14px;
     border-radius:10px; border:1px solid var(--line);
@@ -128,19 +128,19 @@
   }
   @keyframes peekscroll{
     from{transform:translate3d(0,0,0)}
-    to{transform:translate3d(-2945px,0,0)}
+    to{transform:translate3d(-3100px,0,0)}
   }
   /* pausar só onde existe mouse de verdade — no toque isso travava a animação */
   @media (hover:hover) and (pointer:fine){
     .peekwrap:hover .peektrack{ animation-play-state:paused }
   }
   @media (max-width:600px){
-    .peektrack{animation-duration:22s}
-    /* 99 + 10 = 109px por item -> meia pista = 19 x 109 = 2071px */
+    .peektrack{animation-duration:23s}
+    /* 99 + 10 = 109px por item -> meia pista = 20 x 109 = 2180px */
     .peektrack img{width:99px; height:140px; margin-right:10px; flex:0 0 99px}
     @keyframes peekscroll{
       from{transform:translate3d(0,0,0)}
-      to{transform:translate3d(-2071px,0,0)}
+      to{transform:translate3d(-2180px,0,0)}
     }
   }
   @media (prefers-reduced-motion:reduce){
@@ -348,7 +348,7 @@
 
     <img class="shot" src="img-01.webp" alt="Mockup do pacote completo: guia impresso, versão no tablet e no celular, quadro de rotina e cartões" style="margin:26px 0" width="1200" height="900" />
 
-    <p>O sistema criado para pais de crianças de <strong>8 a 14 anos</strong> que já tentaram agenda, castigo e recompensa, e cansaram de repetir a mesma coisa cinco vezes por dia.</p>
+    <p>Mesmo que ele já tenha resistido a agenda, prêmio e castigo sem resultado, este protocolo mostra como dividir os estudos em blocos curtos que ele mesmo escolhe, com <strong>15 minutos por dia</strong>.</p>
 
     <a href="#planos" class="cta">QUERO O SISTEMA AGORA</a>
     <p class="cta-sub">Acesso imediato no seu e-mail</p>
@@ -361,7 +361,7 @@
   </div>
 </section>
 
-<!-- ========== 2 · DOR ========== -->
+<!-- ========== 3C · DOR ========== -->
 <section class="section tint">
   <div class="wrap">
     <p class="kicker">Se isso acontece na sua casa</p>
@@ -378,79 +378,8 @@
   </div>
 </section>
 
-<!-- ========== 3 · O QUE RECEBE ========== -->
-<section class="section">
-  <div class="wrap">
-    <p class="kicker">O que você recebe</p>
-    <h2 class="center">Um kit completo para 1 mês inteiro</h2>
-    <p class="center muted">Tudo pronto para usar. Sem assinatura. Sem vídeos longos.</p>
-    <p class="center muted" style="margin-top:-6px">Veja uma parte do material que você vai receber:</p>
-
-    <div class="peekwrap">
-      <div class="peektrack">
-        <img src="pg-capa.webp" alt="Capa do guia Meu Filho Estuda Sozinho" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg30-mapa.webp" alt="Os 30 dias em uma página, com a linha do tempo das quatro semanas" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg-regras.webp" alt="Página sobre por que rotina imposta não gruda" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg-quadro.webp" alt="Quadro de rotina pra recortar e colar na parede" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg-como-usar.webp" alt="Página explicando como usar o quadro e os cartões" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg30-contrato.webp" alt="Contrato da rotina, assinado pelo filho e pelo responsável" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg-cartoes.webp" alt="Cartões de blocos de estudo" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg-manha-noite.webp" alt="Página sobre preparar a manhã na noite anterior" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg-checklist.webp" alt="Checklist da semana 1" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg-ler-junto.webp" alt="Página sobre ler junto com o filho sem virar aula" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg30-termometro.webp" alt="Termômetro do foco, para registrar como foi cada bloco" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg-placar.webp" alt="Placar da semana com estrelas" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg-revisar.webp" alt="Página sobre como revisar de verdade antes da prova" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg30-recaida.webp" alt="Plano de recaída, para recortar e colar no verso do quadro" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg-foco.webp" alt="Cartaz modo foco ligado pra pendurar na porta" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg-diario.webp" alt="Diário de conquistas de 30 dias" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg30-certificado.webp" alt="Certificado de conclusão do Guia de 30 Dias" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg-proximos.webp" alt="Página de próximos passos para os pais" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg-certificado.webp" alt="Certificado de mérito do Sistema de 7 Dias" loading="eager" decoding="sync" width="452" height="640" />
-        <!-- duplicado pra loop contínuo -->
-        <img src="pg-capa.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg30-mapa.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg-regras.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg-quadro.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg-como-usar.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg30-contrato.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg-cartoes.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg-manha-noite.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg-checklist.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg-ler-junto.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg30-termometro.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg-placar.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg-revisar.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg30-recaida.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg-foco.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg-diario.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg30-certificado.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg-proximos.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
-        <img src="pg-certificado.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== 3B · VEJA POR DENTRO ========== -->
-<section class="section tint">
-  <div class="wrap">
-    <p class="kicker">O material completo</p>
-    <h2 class="center">São <span class="blue">68 páginas</span>, não um PDF de 5</h2>
-    <p class="center muted">26 páginas de guia, 24 folhas pra imprimir e 18 de bônus. Tudo pronto pra usar hoje.</p>
-
-    <img class="shot" src="img-amostra.webp" alt="Páginas reais do material espalhadas sobre a mesa: capa, quadro de rotina, cartões de blocos e checklist de 30 dias" style="margin:26px 0" loading="lazy" decoding="async" width="1100" height="1100" />
-
-    <div class="counts">
-      <div><b>26</b><span>páginas de guia</span></div>
-      <div><b>24</b><span>folhas imprimíveis</span></div>
-      <div><b>18</b><span>páginas de bônus</span></div>
-    </div>
-  </div>
-</section>
-
 <!-- ========== 4 · MÉTODO ========== -->
-<section class="section tint">
+<section class="section">
   <div class="wrap">
     <p class="kicker">Como funciona</p>
     <h2 class="center">Muda quem monta a rotina. Aí tudo muda.</h2>
@@ -470,8 +399,119 @@
   </div>
 </section>
 
-<!-- ========== 6 · PROVA SOCIAL ========== -->
+<!-- ========== 3 · O QUE RECEBE ========== -->
 <section class="section tint">
+  <div class="wrap">
+    <p class="kicker">O que você recebe</p>
+    <h2 class="center">Um kit completo para 1 mês inteiro</h2>
+    <p class="center muted">Tudo pronto para usar. Sem assinatura. Sem vídeos longos.</p>
+    <p class="center muted" style="margin-top:-6px">Veja uma parte do material que você vai receber:</p>
+
+    <div class="peekwrap">
+      <div class="peektrack">
+        <img src="pg-capa.webp" alt="Capa do guia Meu Filho Estuda Sozinho" loading="eager" decoding="sync" width="452" height="640" />
+        <img src="atv-labirinto.webp" alt="Atividade de labirinto: do sofá até a mesa de estudo" loading="eager" decoding="sync" width="452" height="639" />
+        <img src="pg30-mapa.webp" alt="Os 30 dias em uma página, com a linha do tempo das semanas" loading="eager" decoding="sync" width="452" height="640" />
+        <img src="atv-caligrafia.webp" alt="Folha de caligrafia para a criança traçar a meta da semana" loading="eager" decoding="sync" width="452" height="639" />
+        <img src="pg-quadro.webp" alt="Quadro de rotina para recortar e colar na parede" loading="eager" decoding="sync" width="452" height="640" />
+        <img src="atv-caca.webp" alt="Caça-palavras do estudo com 10 palavras escondidas" loading="eager" decoding="sync" width="452" height="639" />
+        <img src="pg-cartoes.webp" alt="Cartões de blocos de estudo com ícones" loading="eager" decoding="sync" width="452" height="640" />
+        <img src="atv-estrelas.webp" alt="Painel de 30 estrelas para pintar a cada bloco concluído" loading="eager" decoding="sync" width="452" height="639" />
+        <img src="pg-cartoes-casa.webp" alt="Cartões da rotina de casa com ícones" loading="eager" decoding="sync" width="452" height="640" />
+        <img src="atv-ligar.webp" alt="Jogo de ligar cada bloco de estudo ao horário do dia" loading="eager" decoding="sync" width="452" height="639" />
+        <img src="pg-checklist.webp" alt="Checklist dos 7 dias, semana 1" loading="eager" decoding="sync" width="452" height="640" />
+        <img src="atv-medalha.webp" alt="Medalha para pintar, escrever o nome e recortar" loading="eager" decoding="sync" width="452" height="639" />
+        <img src="pg-placar.webp" alt="Placar da semana com estrelas para marcar" loading="eager" decoding="sync" width="452" height="640" />
+        <img src="pg-cartoes-pausa.webp" alt="Cartões de pausa e lazer com ícones" loading="eager" decoding="sync" width="452" height="640" />
+        <img src="pg-ganha.webp" alt="Página o que ele ganha de verdade, com ícones" loading="eager" decoding="sync" width="452" height="640" />
+        <img src="pg-foco.webp" alt="Cartaz modo foco ligado para pendurar na porta" loading="eager" decoding="sync" width="452" height="640" />
+        <img src="pg-pausa.webp" alt="Cartaz de pausa de 5 minutos" loading="eager" decoding="sync" width="452" height="640" />
+        <img src="pg-diario.webp" alt="Diário de conquistas de 30 dias" loading="eager" decoding="sync" width="452" height="640" />
+        <img src="pg-quadro-fds.webp" alt="Quadro de rotina do fim de semana" loading="eager" decoding="sync" width="452" height="640" />
+        <img src="pg-certificado.webp" alt="Certificado de mérito do Sistema de 7 Dias" loading="eager" decoding="sync" width="452" height="640" />
+        <!-- duplicado pra loop contínuo -->
+        <img src="pg-capa.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
+        <img src="atv-labirinto.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="639" />
+        <img src="pg30-mapa.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
+        <img src="atv-caligrafia.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="639" />
+        <img src="pg-quadro.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
+        <img src="atv-caca.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="639" />
+        <img src="pg-cartoes.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
+        <img src="atv-estrelas.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="639" />
+        <img src="pg-cartoes-casa.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
+        <img src="atv-ligar.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="639" />
+        <img src="pg-checklist.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
+        <img src="atv-medalha.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="639" />
+        <img src="pg-placar.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
+        <img src="pg-cartoes-pausa.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
+        <img src="pg-ganha.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
+        <img src="pg-foco.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
+        <img src="pg-pausa.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
+        <img src="pg-diario.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
+        <img src="pg-quadro-fds.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
+        <img src="pg-certificado.webp" alt="" aria-hidden="true" loading="eager" decoding="sync" width="452" height="640" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 3B · VEJA POR DENTRO ========== -->
+<section class="section">
+  <div class="wrap">
+    <p class="kicker">O material completo</p>
+    <h2 class="center">São <span class="blue">68 páginas</span>, não um PDF de 5</h2>
+    <p class="center muted">26 páginas de guia, 24 folhas pra imprimir e 18 de bônus. Tudo pronto pra usar hoje.</p>
+
+    <img class="shot" src="img-amostra.webp" alt="Páginas reais do material espalhadas sobre a mesa: capa, quadro de rotina, cartões de blocos e checklist de 30 dias" style="margin:26px 0" loading="lazy" decoding="async" width="1100" height="1100" />
+
+    <div class="counts">
+      <div><b>26</b><span>páginas de guia</span></div>
+      <div><b>24</b><span>folhas imprimíveis</span></div>
+      <div><b>18</b><span>páginas de bônus</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 7 · BÔNUS ========== -->
+<section class="section tint">
+  <div class="wrap">
+    <p class="kicker">E ainda tem mais</p>
+    <h2 class="center">Você leva 3 bônus junto</h2>
+
+    <div class="bonus">
+      <img src="img-05.webp" alt="Capa do bônus Comunicação Sem Guerra" style="width:100%;height:auto;max-width:290px;display:block;margin:22px auto 0" loading="lazy" decoding="async" width="512" height="640" />
+      <div class="in">
+        <span class="tag">BÔNUS 1</span>
+        <h3>Comunicação Sem Guerra</h3>
+        <p>As frases que funcionam e as que sabotam. Como elogiar em vez de cobrar, sem virar sermão.</p>
+        <div class="val"><span class="old">R$27,90</span> <span class="new">GRÁTIS</span></div>
+      </div>
+    </div>
+
+    <div class="bonus">
+      <img src="img-06.webp" alt="Capa do bônus Telas Sem Conflito" style="width:100%;height:auto;max-width:290px;display:block;margin:22px auto 0" loading="lazy" decoding="async" width="427" height="640" />
+      <div class="in">
+        <span class="tag">BÔNUS 2</span>
+        <h3>Telas Sem Conflito</h3>
+        <p>Como reduzir o tempo de tela sem virar outra briga. Regras que ele aceita porque entende.</p>
+        <div class="val"><span class="old">R$27,90</span> <span class="new">GRÁTIS</span></div>
+      </div>
+    </div>
+
+    <div class="bonus">
+      <img src="img-07.webp" alt="Capa do bônus Para Quem se Distrai Fácil" style="width:100%;height:auto;max-width:290px;display:block;margin:22px auto 0" loading="lazy" decoding="async" width="427" height="640" />
+      <div class="in">
+        <span class="tag">BÔNUS 3</span>
+        <h3>Para Quem se Distrai Fácil</h3>
+        <p>Versão do método pra criança que perde o foco a cada ruído. Blocos ainda mais curtos.</p>
+        <div class="val"><span class="old">R$19,90</span> <span class="new">GRÁTIS</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 6 · PROVA SOCIAL ========== -->
+<section class="section">
   <div class="wrap">
     <p class="kicker">Famílias reais</p>
     <h2 class="center">O que outros pais dizem</h2>
@@ -509,44 +549,6 @@
           <p class="quote">"No terceiro dia usando o sistema, ela já tinha pegado o caderno sozinha. Eu nem acreditei."</p>
           <div class="who"><div class="av"><img src="av-juliana.webp" alt="Juliana Martins" loading="lazy" decoding="async" width="160" height="160" /></div><div><b>Juliana Martins</b><span>mãe</span></div></div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== 7 · BÔNUS ========== -->
-<section class="section">
-  <div class="wrap">
-    <p class="kicker">E ainda tem mais</p>
-    <h2 class="center">Você leva 3 bônus junto</h2>
-
-    <div class="bonus">
-      <img src="img-05.webp" alt="Capa do bônus Comunicação Sem Guerra" style="width:100%;height:auto;max-width:290px;display:block;margin:22px auto 0" loading="lazy" decoding="async" width="512" height="640" />
-      <div class="in">
-        <span class="tag">BÔNUS 1</span>
-        <h3>Comunicação Sem Guerra</h3>
-        <p>As frases que funcionam e as que sabotam. Como elogiar em vez de cobrar, sem virar sermão.</p>
-        <div class="val"><span class="old">R$27,90</span> <span class="new">GRÁTIS</span></div>
-      </div>
-    </div>
-
-    <div class="bonus">
-      <img src="img-06.webp" alt="Capa do bônus Telas Sem Conflito" style="width:100%;height:auto;max-width:290px;display:block;margin:22px auto 0" loading="lazy" decoding="async" width="427" height="640" />
-      <div class="in">
-        <span class="tag">BÔNUS 2</span>
-        <h3>Telas Sem Conflito</h3>
-        <p>Como reduzir o tempo de tela sem virar outra briga. Regras que ele aceita porque entende.</p>
-        <div class="val"><span class="old">R$27,90</span> <span class="new">GRÁTIS</span></div>
-      </div>
-    </div>
-
-    <div class="bonus">
-      <img src="img-07.webp" alt="Capa do bônus Para Quem se Distrai Fácil" style="width:100%;height:auto;max-width:290px;display:block;margin:22px auto 0" loading="lazy" decoding="async" width="427" height="640" />
-      <div class="in">
-        <span class="tag">BÔNUS 3</span>
-        <h3>Para Quem se Distrai Fácil</h3>
-        <p>Versão do método pra criança que perde o foco a cada ruído. Blocos ainda mais curtos.</p>
-        <div class="val"><span class="old">R$19,90</span> <span class="new">GRÁTIS</span></div>
       </div>
     </div>
   </div>
